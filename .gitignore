@@ -16,4 +16,4 @@
 node_modules
 outputs
 images
-
+src/helpers/browser.js
