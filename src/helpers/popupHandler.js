@@ -22,9 +22,9 @@ export async function handleAllPopups(page) {
       }
     } catch (error) {
       // Popup not found - continue silently
+      console.error(error);
     }
 
-    // Handle cookie notice
     try {
       await page.waitForSelector(".cookie-bar", { timeout: 5000 });
       const cookieCloseSelectors = [
