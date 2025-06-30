@@ -1,36 +1,36 @@
-import fs from 'fs';
-import path from 'path';
-import { launchBrowser } from './helpers/browser.js';
-import { validateDiscount } from './helpers/validator.js';
-import { handleAllPopups } from './helpers/popupHandler.js'; // Updated import name
+import fs from "fs";
+import path from "path";
+import { launchBrowser } from "./helpers/browser.js";
+import { handleAllPopups } from "./helpers/popupHandler.js"; // Updated import name
 
 export async function collectProductUrls(categoryUrl, minDiscount = 40) {
   const browser = await launchBrowser();
   const context = await browser.newContext({
     viewport: { width: 375, height: 812 }, // Mobile viewport
-    userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1'
+    userAgent:
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1",
   });
-  
+
   const page = await context.newPage();
-  const domain = 'https://www.jomashop.com';
+  const domain = "https://www.jomashop.com";
   const allUrls = new Set();
   let loadMoreAttempts = 0;
   const maxLoadMoreAttempts = 100;
 
   try {
     console.log(`🌐 Navigating to: ${categoryUrl}`);
-    
+
     // First try with reduced timeout
     try {
-      await page.goto(categoryUrl, { 
-        waitUntil: 'domcontentloaded', 
-        timeout: 3000 
+      await page.goto(categoryUrl, {
+        waitUntil: "domcontentloaded",
+        timeout: 3000,
       });
     } catch (error) {
-      console.log('⚠️ Initial load timed out, retrying with longer timeout');
+      console.log("⚠️ Initial load timed out, retrying with longer timeout");
       await page.goto(categoryUrl, {
-        waitUntil: 'domcontentloaded',
-        timeout: 12000
+        waitUntil: "domcontentloaded",
+        timeout: 12000,
       });
     }
 
@@ -42,10 +42,10 @@ export async function collectProductUrls(categoryUrl, minDiscount = 40) {
 
       // Extract product URLs
       const newUrls = await extractProductUrls(page, domain, minDiscount);
-      newUrls.forEach(url => allUrls.add(url));
-      
+      newUrls.forEach((url) => allUrls.add(url));
+
       console.log(`📊 Total products: ${allUrls.size}`);
-       // Handle popup again befor loading more
+      // Handle popup again befor loading more
       await handleAllPopups(page);
       // Try to load more
       const loadedMore = await attemptLoadMore(page);
@@ -60,7 +60,9 @@ export async function collectProductUrls(categoryUrl, minDiscount = 40) {
         loadMoreAttempts = 0;
       } catch (error) {
         loadMoreAttempts++;
-        console.warn(`⚠️ Failed to load new products (attempt ${loadMoreAttempts}/${maxLoadMoreAttempts})`);
+        console.warn(
+          `⚠️ Failed to load new products (attempt ${loadMoreAttempts}/${maxLoadMoreAttempts})`
+        );
         await page.waitForTimeout(2000);
       }
     }
@@ -75,7 +77,7 @@ export async function collectProductUrls(categoryUrl, minDiscount = 40) {
 
     return output;
   } catch (error) {
-    console.error('❌ Error during scraping:', error);
+    console.error("❌ Error during scraping:", error);
     throw error;
   } finally {
     await context.close();
@@ -87,32 +89,47 @@ export async function collectProductUrls(categoryUrl, minDiscount = 40) {
 
 async function waitForProductList(page) {
   try {
-    await page.waitForSelector('ul.productsList li.productItem, ul.ProductListingResults__productList li.ProductListingResults__productCard', {
-      timeout: 3000
-    });
+    await page.waitForSelector(
+      "ul.productsList li.productItem, ul.ProductListingResults__productList li.ProductListingResults__productCard",
+      {
+        timeout: 3000,
+      }
+    );
   } catch (error) {
-    console.error('Timed out waiting for product list to load');
+    console.error("Timed out waiting for product list to load");
     throw error;
   }
 }
 
 async function extractProductUrls(page, domain, minDiscount) {
-  return await page.evaluate(({ domain, minDiscount }) => {
-    const products = Array.from(document.querySelectorAll(
-      'ul.productsList li.productItem, ul.ProductListingResults__productList li.ProductListingResults__productCard'
-    ));
-    
-    return products.map(product => {
-      const discountEl = product.querySelector('.tag-item.discount-label, .ProductCard__discount');
-      if (!discountEl) return null;
+  return await page.evaluate(
+    ({ domain, minDiscount }) => {
+      const products = Array.from(
+        document.querySelectorAll(
+          "ul.productsList li.productItem, ul.ProductListingResults__productList li.ProductListingResults__productCard"
+        )
+      );
 
-      const discountMatch = discountEl.textContent.trim().match(/(\d+)%/);
-      if (!discountMatch || parseInt(discountMatch[1]) < minDiscount) return null;
+      return products
+        .map((product) => {
+          const discountEl = product.querySelector(
+            ".tag-item.discount-label, .ProductCard__discount"
+          );
+          if (!discountEl) return null;
 
-      const link = product.querySelector('a.productName-link, a.ProductCard__link');
-      return link ? `${domain}${link.getAttribute('href')}` : null;
-    }).filter(url => url !== null);
-  }, { domain, minDiscount });
+          const discountMatch = discountEl.textContent.trim().match(/(\d+)%/);
+          if (!discountMatch || parseInt(discountMatch[1]) < minDiscount)
+            return null;
+
+          const link = product.querySelector(
+            "a.productName-link, a.ProductCard__link"
+          );
+          return link ? `${domain}${link.getAttribute("href")}` : null;
+        })
+        .filter((url) => url !== null);
+    },
+    { domain, minDiscount }
+  );
 }
 
 async function attemptLoadMore(page) {
@@ -121,9 +138,9 @@ async function attemptLoadMore(page) {
     await page.waitForTimeout(1000);
 
     const buttonSelectors = [
-      'button.LoadContent__button:not([disabled])',
-      'a.btn.primary.btn-link-as-btn',
-      'button[data-testid="load-more-button"]'
+      "button.LoadContent__button:not([disabled])",
+      "a.btn.primary.btn-link-as-btn",
+      'button[data-testid="load-more-button"]',
     ];
 
     for (const selector of buttonSelectors) {
@@ -136,7 +153,7 @@ async function attemptLoadMore(page) {
     }
     return false;
   } catch (error) {
-    console.log('Load More click failed:', error.message);
+    console.log("Load More click failed:", error.message);
     return false;
   }
 }
@@ -145,7 +162,7 @@ async function waitForNewProducts(page, previousCount) {
   await page.waitForFunction(
     (prevCount) => {
       const currentCount = document.querySelectorAll(
-        'ul.productsList li.productItem, ul.ProductListingResults__productList li.ProductListingResults__productCard'
+        "ul.productsList li.productItem, ul.ProductListingResults__productList li.ProductListingResults__productCard"
       ).length;
       return currentCount > prevCount;
     },
@@ -157,12 +174,12 @@ async function waitForNewProducts(page, previousCount) {
 function formatOutput(urlArray, categoryUrl, minDiscount) {
   const chunked = {};
   for (let i = 0; i < urlArray.length; i += 10) {
-    chunked[`array${Math.floor(i/10)+1}`] = urlArray.slice(i, i + 10);
+    chunked[`array${Math.floor(i / 10) + 1}`] = urlArray.slice(i, i + 10);
   }
 
   const brandType = new URL(categoryUrl).pathname
-    .replace(/\//g, '')
-    .replace(/-/g, ' ');
+    .replace(/\//g, "")
+    .replace(/-/g, " ");
 
   return {
     urls: chunked,
@@ -170,17 +187,17 @@ function formatOutput(urlArray, categoryUrl, minDiscount) {
       totalProducts: urlArray.length,
       brandType,
       minDiscount,
-      collectedAt: new Date().toISOString()
-    }
+      collectedAt: new Date().toISOString(),
+    },
   };
 }
 
 function saveResults(output) {
-  const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const filename = path.join('outputs', `jomashop_urls_${timestamp}.json`);
-  
-  fs.mkdirSync('outputs', { recursive: true });
+  const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const filename = path.join("outputs", `jomashop_urls_${timestamp}.json`);
+
+  fs.mkdirSync("outputs", { recursive: true });
   fs.writeFileSync(filename, JSON.stringify(output, null, 2));
-  
+
   return filename;
 }
