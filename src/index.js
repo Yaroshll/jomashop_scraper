@@ -5,7 +5,7 @@ import { scrapeProduct } from "./helpers/scraper.js";
 import { exportToExcel } from "./helpers/excel.js";
 
 const productUrls = [
-  "https://www.jomashop.com/tissot-prx-powermatic-80-automatic-champagne-dial-ladies-watch-t1372073302100.html",
+  "https://www.jomashop.com/breitling-avenger-43-watch-a17318101c1a1.html",
 ];
 
 async function main() {
