@@ -1,4 +1,3 @@
-// This function handles all types of popups (main popup + cookie notice)
 export async function handleAllPopups(page) {
   try {
     // Handle main popup
