@@ -16,6 +16,3 @@
 node_modules
 outputs
 images
-src/helpers/browser.js
-src/helpers/validator.js
-src/helpers/pagination.js

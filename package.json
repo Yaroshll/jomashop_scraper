@@ -1,9 +1,8 @@
 {
   "name": "jomashop_scraper",
   "version": "1.0.0",
-   "type": "module",
+  "type": "module",
   "main": "index.js",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js"
@@ -13,6 +12,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "csv-parser": "^3.2.0",
+    "csv-writer": "^1.6.0",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
     "playwright": "^1.53.1",
     "xlsx": "^0.18.5"
   },

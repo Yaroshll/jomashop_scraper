@@ -177,9 +177,9 @@ function formatOutput(urlArray, categoryUrl, minDiscount) {
 
 function saveResults(output) {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const filename = path.join('outputs', `jomashop_urls_${timestamp}.json`);
+  const filename = path.join('outputs3', `jomashop_urls_${timestamp}.json`);
   
-  fs.mkdirSync('outputs', { recursive: true });
+  fs.mkdirSync('outputs3', { recursive: true });
   fs.writeFileSync(filename, JSON.stringify(output, null, 2));
   
   return filename;
