@@ -7,7 +7,7 @@ import { exportToExcel } from "./helpers/excel.js";
 
 // List of product URLs to scrape
 const productUrls = [
-"https://www.jomashop.com/versace-dark-grey-butterfly-ladies-sunglasses-ve4460d-gb1-87-57.html",
+  "https://www.jomashop.com/versace-dark-grey-butterfly-ladies-sunglasses-ve4460d-gb1-87-57.html",
 
     ]
  ;
