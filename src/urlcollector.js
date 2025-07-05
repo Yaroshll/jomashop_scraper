@@ -76,30 +76,6 @@ export async function collectProductUrls(categoryUrl, minDiscount = 40) {
   }
 }
 
-async function getPaginationUrls(page, domain) {
-  // Wait for the pagination to appear
-  await page
-    .waitForSelector("ul.pagination", { timeout: 4000 })
-    .catch(() => {});
-
-  return await page.evaluate((domain) => {
-    const pagination = document.querySelectorAll(
-      "ul.pagination li.page-item a.page-link[href]"
-    );
-    // If no pagination found, return empty array (only one page)
-    if (!pagination.length) return [];
-
-    // Get all unique page hrefs, convert to absolute URLs
-    const hrefs = Array.from(pagination)
-      .map((a) => a.getAttribute("href"))
-      .filter(Boolean)
-      .map((href) => (href.startsWith("http") ? href : domain + href));
-
-    // Deduplicate (sometimes multiple links for same page)
-    return Array.from(new Set(hrefs));
-  }, domain);
-}
-
 async function waitForProductList(page) {
   try {
     // Scroll to the bottom in 4 steps
@@ -206,7 +182,10 @@ function saveResults(output) {
   if (!fs.existsSync("URL_scraper_output")) {
     fs.mkdirSync("URL_scraper_output", { recursive: true });
   }
-  const filename = path.join("URL_scraper_output", `jomashop_urls_${timestamp}.json`);
+  const filename = path.join(
+    "URL_scraper_output",
+    `jomashop_urls_${timestamp}.json`
+  );
 
   fs.writeFileSync(filename, JSON.stringify(output, null, 2));
 

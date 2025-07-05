@@ -15,7 +15,7 @@ async function gotoWithRetries(page, url, retries = 2) {
     try {
       // Navigate to the URL with a 60-second timeout
       await page.goto(url, { timeout: 60000 });
-      
+
       // Wait for the brand name element to appear (20-second timeout)
       await page.waitForFunction(
         () => document.querySelector("span.brand-name"),
@@ -24,11 +24,13 @@ async function gotoWithRetries(page, url, retries = 2) {
       return; // Success - exit the function
     } catch (error) {
       // Log retry attempt
-      console.warn(`Retry ${i + 1}/${retries}: Failed to load ${url} - ${error.message}`);
-      
+      console.warn(
+        `Retry ${i + 1}/${retries}: Failed to load ${url} - ${error.message}`
+      );
+
       // If we've exhausted all retries, throw the error
       if (i === retries) throw error;
-      
+
       // Wait 20 seconds before retrying
       await page.waitForTimeout(20000);
     }
@@ -55,35 +57,41 @@ export async function scrapeProduct(page, url, genderFallback = "") {
     bodyHTML: "",
     imageSrc: [],
     breadcrumbs: [],
-    gender: ""
+    gender: "",
   };
 
   try {
     // Load the product page with retry logic
     await gotoWithRetries(page, url);
-    
+
     // Wait 2 seconds to ensure page stability
     await page.waitForTimeout(2000);
 
     // Extract breadcrumb navigation items
     productData.breadcrumbs = await page.$$eval(
-      'ol.breadcrumb.pdp-breadcrumb li.breadcrumb-item',
-      items => items.map(item => item.textContent.trim())
+      "ol.breadcrumb.pdp-breadcrumb li.breadcrumb-item",
+      (items) => items.map((item) => item.textContent.trim())
     );
 
     // Extract gender from URL or use fallback
     const genderMatch = url.match(/gender=([^&]+)/);
-    productData.gender = genderMatch ? decodeURIComponent(genderMatch[1]) : genderFallback;
+    productData.gender = genderMatch
+      ? decodeURIComponent(genderMatch[1])
+      : genderFallback;
 
     // Extract brand name
     const brandEl = await page.$("span.brand-name");
-    if (brandEl) productData.brandName = (await brandEl.textContent())?.trim() || "";
+    if (brandEl)
+      productData.brandName = (await brandEl.textContent())?.trim() || "";
 
     // Extract product title and generate handle (URL-friendly version)
     const titleEl = await page.$("span.product-name");
     if (titleEl) {
       productData.title = (await titleEl.textContent())?.trim() || "";
-      productData.handle = productData.title.replace(/\s+/g, "_").toLowerCase();
+      productData.handle =
+        productData.title.replace(/\s+/g, "_").toLowerCase() +
+        "_" +
+        Math.random();
     }
 
     // Extract SKU (Item Number)
@@ -95,19 +103,24 @@ export async function scrapeProduct(page, url, genderFallback = "") {
     }
 
     // Extract pricing information
-    const originalPriceEl = await page.$("div.retail-wrapper span:not(.retail-label)");
+    const originalPriceEl = await page.$(
+      "div.retail-wrapper span:not(.retail-label)"
+    );
     const nowPriceEl = await page.$("div.now-price span");
     const wasPriceEl = await page.$("div.was-wrapper span:not(.was-label)");
 
     // Handle different pricing scenarios
     if (originalPriceEl && nowPriceEl && wasPriceEl) {
       // Case 1: All three price elements exist (retail, current, was prices)
-      productData.originalPrice = (await originalPriceEl.textContent())?.trim() || "";
-      productData.priceAfterCoupon = (await nowPriceEl.textContent())?.trim() || "";
+      productData.originalPrice =
+        (await originalPriceEl.textContent())?.trim() || "";
+      productData.priceAfterCoupon =
+        (await nowPriceEl.textContent())?.trim() || "";
       productData.costPerItem = (await wasPriceEl.textContent())?.trim() || "";
     } else if (originalPriceEl && nowPriceEl) {
       // Case 2: Only retail and current prices exist
-      productData.originalPrice = (await originalPriceEl.textContent())?.trim() || "";
+      productData.originalPrice =
+        (await originalPriceEl.textContent())?.trim() || "";
       productData.costPerItem = (await nowPriceEl.textContent())?.trim() || "";
     } else if (nowPriceEl) {
       // Case 3: Only current price exists
@@ -115,7 +128,9 @@ export async function scrapeProduct(page, url, genderFallback = "") {
     }
 
     // Extract product description HTML
-    const descriptionEl = await page.$("div.show-more-text-content > div:nth-child(1)");
+    const descriptionEl = await page.$(
+      "div.show-more-text-content > div:nth-child(1)"
+    );
     if (descriptionEl) {
       productData.bodyHTML = (await descriptionEl.innerHTML())?.trim() || "";
     }
@@ -125,8 +140,8 @@ export async function scrapeProduct(page, url, genderFallback = "") {
     await page.waitForTimeout(2000); // Wait for any lazy-loaded images
 
     // Extract additional product images
-    const extraImages = await page.$$eval("div.slide-item > img", imgs =>
-      imgs.map(img => img.getAttribute("src")).filter(Boolean)
+    const extraImages = await page.$$eval("div.slide-item > img", (imgs) =>
+      imgs.map((img) => img.getAttribute("src")).filter(Boolean)
     );
 
     // Add unique images to the imageSrc array
@@ -135,7 +150,6 @@ export async function scrapeProduct(page, url, genderFallback = "") {
         productData.imageSrc.push(src);
       }
     }
-
   } catch (err) {
     console.error(`Scraping error at ${url}: ${err.message}`);
   }
