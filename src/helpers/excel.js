@@ -12,8 +12,8 @@ import path from "path";
 export async function exportToExcel(rows, filename) {
   try {
     // Create outputs directory if it doesn't exist
-    if (!fs.existsSync("outputs2")) {
-      fs.mkdirSync("outputs2", { recursive: true });
+    if (!fs.existsSync("products_details_output")) {
+      fs.mkdirSync("products_details_output", { recursive: true });
     }
 
     // 1. Save Excel file (original format)
@@ -41,21 +41,25 @@ export async function exportToExcel(rows, filename) {
  * @returns {Array} Shopify-formatted product data
  */
 function convertToShopifyFormat(rows) {
-  return rows.map(row => {
+  return rows.map((row) => {
     // Check if this is an image-only row (for additional product images)
-    const isImageOnly = !row['Title'] && !row['SKU'] && !row['Original Price'];
+    const isImageOnly = !row["Title"] && !row["SKU"] && !row["Original Price"];
 
     if (isImageOnly) {
       return {
-        'Handle': row['Handle'],
-        'Image Src': row['Image Src']
+        Handle: row["Handle"],
+        "Image Src": row["Image Src"],
       };
     }
 
     // Calculate pricing for Shopify (with markup and rounding)
-    const cost = parsePrice(row['Cost per item']);
+    const cost = parsePrice(row["Cost per item"]);
     const calculatedCost = (cost * 3.675).toFixed(2); // Apply cost multiplier
     const basePrice = calculatedCost * 1.3; // Add 30% markup
+    const min = 0.15;
+    const max = 0.3;
+    const randomPercent = min + Math.random() * (max - min);
+    const compareAtPrice = Math.round(basePrice * (1 + randomPercent));
     const variantPrice = Math.floor(basePrice); // Round down to whole number
 
     /**
@@ -67,30 +71,32 @@ function convertToShopifyFormat(rows) {
       const g = (gender || "").toLowerCase();
 
       if (g.includes("women") || g.includes("womens")) return "female";
-      if (g.includes("men")|| g.includes("mens")) return "male";
+      if (g.includes("men") || g.includes("mens")) return "male";
       return ""; // Return empty if gender not specified
     }
 
     // Return Shopify-formatted product data
     return {
-      'Handle': row['Handle'],
-      'Title': `${row['Brand Name'] || ''}, ${row['Title'] || ''}`.trim(),
-      'Body (HTML)': row['Body (HTML)'],
-      'Variant SKU': row['SKU'],
-      'Variant Price': variantPrice,
-      'Image Src': row['Image Src'],
-      'Cost per item': calculatedCost,
-      'Variant Image': row['Image Src'],
-      'Variant Fulfillment Service': 'manual',
-      'Variant Inventory Policy': 'deny',
-      'Variant Inventory Tracker': 'shopify',
-      'Google Shopping / Gender': normalizeGender(row['Gender']),
-      'Type': 'USA Products',
-      'Vendor': 'Joma Shop',
-      'Tags': row['Tags'],
-      'Status': 'Active' ,
-       'Published': 'TRUE',
-      'product.metafields.custom.original_prodect_url': row['original_prodect_url'] || ''
+      Handle: row["Handle"],
+      Title: `${row["Brand Name"] || ""}, ${row["Title"] || ""}`.trim(),
+      "Body (HTML)": row["Body (HTML)"],
+      "Variant SKU": row["SKU"],
+      "Variant Price": variantPrice,
+      "Image Src": row["Image Src"],
+      "Cost per item": calculatedCost,
+      "Variant Image": row["Image Src"],
+      "Variant Fulfillment Service": "manual",
+      "Variant Inventory Policy": "deny",
+      "Variant Inventory Tracker": "shopify",
+      "Google Shopping / Gender": normalizeGender(row["Gender"]),
+      Type: "USA Products",
+      Vendor: "Joma Shop",
+      Tags: row["Tags"],
+      Status: "Active",
+      Published: "TRUE",
+      "Variant Compare At Price": compareAtPrice,
+      "product.metafields.custom.original_prodect_url":
+        row["original_prodect_url"] || "",
     };
   });
 }

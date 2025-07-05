@@ -1,4 +1,4 @@
-import { chromium } from 'playwright';
+import { chromium } from "playwright";
 
 /**
  * Launches a browser instance
@@ -6,14 +6,6 @@ import { chromium } from 'playwright';
  */
 export async function launchBrowser() {
   return await chromium.launch({
-    headless: true,
-    channel: "chrome",
-    args: [
-      "--disable-gpu",
-      "--disable-dev-shm-usage",
-      "--disable-setuid-sandbox",
-      "--no-sandbox",
-    ],
-    timeout: 12000,
+    headless: false,
   });
 }

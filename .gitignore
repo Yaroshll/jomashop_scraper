@@ -14,5 +14,6 @@
 # Avoid your project being littered with annoying .DS_Store files!
 
 node_modules
-outputs
+products_details_output
+URL_scraper_output
 images
