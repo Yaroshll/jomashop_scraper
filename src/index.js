@@ -2,13 +2,12 @@ import { launchBrowser } from "./helpers/browser.js";
 import { scrapeProduct } from "./helpers/scraper.js";
 import { exportToExcel } from "./helpers/excel.js";
 
-const extraTags = ["men"];
+const extraTags = ["women"];
 
 const productUrls = [
-  "https://www.jomashop.com/corum-admiral-cup-white-dial-mens-watch-a895-04302.html",
-];
 
-const genderFromCollector = "womens";
+];
+const genderFromCollector = "women";
 
 /**
  * Main scraping function
@@ -20,9 +19,11 @@ async function main() {
   const allRows = []; // Stores all scraped product data
 
   try {
+    let counter = 0;
     // Process each product URL
     for (const url of productUrls) {
-      console.log(`Scraping ${url}`);
+      console.log(`Scraping ${counter + 1}/${productUrls.length} -- ${url}`);
+      counter += 1;
 
       // Scrape product data from page
       const productData = await scrapeProduct(page, url, genderFromCollector);

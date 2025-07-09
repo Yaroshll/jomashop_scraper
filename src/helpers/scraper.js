@@ -86,21 +86,23 @@ export async function scrapeProduct(page, url, genderFallback = "") {
 
     // Extract product title and generate handle (URL-friendly version)
     const titleEl = await page.$("span.product-name");
-    if (titleEl) {
-      productData.title = (await titleEl.textContent())?.trim() || "";
-      productData.handle =
-        productData.title.replace(/\s+/g, "_").toLowerCase() +
-        "_" +
-        Math.random();
-    }
 
-    // Extract SKU (Item Number)
     const skuEl = await page.$("span.product-info-stock-sku");
     if (skuEl) {
       const fullSku = (await skuEl.textContent())?.trim() || "";
       const match = fullSku.match(/Item No\. (.+)/i);
       productData.sku = match ? match[1].trim() : fullSku;
     }
+
+    if (titleEl) {
+      productData.title = (await titleEl.textContent())?.trim() || "";
+      productData.handle =
+        productData.title.replace(/\s+/g, "_").toLowerCase() +
+        "_" +
+        productData.sku;
+    }
+
+    // Extract SKU (Item Number)
 
     // Extract pricing information
     const originalPriceEl = await page.$(

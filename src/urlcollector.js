@@ -61,7 +61,7 @@ export async function collectProductUrls(categoryUrl, minDiscount = 40) {
       urlArray,
       categoryUrl,
       minDiscount,
-      arraySize: 50,
+      arraySize: 300,
     });
     const filename = saveResults(output);
     console.log(`✅ Saved ${urlArray.length} product URLs to ${filename}`);
@@ -137,10 +137,13 @@ async function extractProductUrls(page, domain, minDiscount) {
           const discountEl = product.querySelector(
             ".tag-item.discount-label, .ProductCard__discount"
           );
-          if (!discountEl) return null;
+          if (!discountEl && minDiscount) return null;
 
-          const discountMatch = discountEl.textContent.trim().match(/(\d+)%/);
-          if (!discountMatch || parseInt(discountMatch[1]) < minDiscount)
+          const discountMatch = discountEl?.textContent.trim().match(/(\d+)%/);
+          if (
+            minDiscount &&
+            (!discountMatch || parseInt(discountMatch[1]) < minDiscount)
+          )
             return null;
 
           const link = product.querySelector(
