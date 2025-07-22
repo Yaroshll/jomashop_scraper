@@ -1,6 +1,6 @@
 import { collectProductUrls } from "./urlcollector.js";
 
-const TARGET_URL = `https://www.jomashop.com/filters/watches?price=%7B%22from%22%3A200%2C%22to%22%3A10000%7D&department=Watches&item_condition=Condition%3A+New&gender=Womens&sort=price_desc%7CDESC`;
+const TARGET_URL = `https://www.jomashop.com/beauty.html`;
 const MIN_DISCOUNT = 0;
 
 async function main() {
