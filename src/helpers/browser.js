@@ -6,6 +6,6 @@ import { chromium } from "playwright";
  */
 export async function launchBrowser() {
   return await chromium.launch({
-    headless: false,
+    headless: true,
   });
 }
