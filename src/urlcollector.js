@@ -134,6 +134,12 @@ async function extractProductUrls(page, domain, minDiscount) {
 
       return products
         .map((product) => {
+          // Check for tester label first
+          const testerLabel = product.querySelector(
+            'span.tag-item.tester-label svg[viewBox="0 0 24 24"]'
+          );
+          if (testerLabel) return null; // Skip tester products
+
           const discountEl = product.querySelector(
             ".tag-item.discount-label, .ProductCard__discount"
           );

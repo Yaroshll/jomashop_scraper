@@ -1,5 +1,5 @@
 {
-  "name": "jomashop_scraper",
+  "name": "y",
   "version": "1.0.0",
   "type": "module",
   "main": "index.js",
@@ -10,7 +10,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "csv-parser": "^3.2.0",
     "csv-writer": "^1.6.0",
@@ -22,5 +21,14 @@
   "devDependencies": {
     "@types/node": "^24.0.4",
     "typescript": "^5.8.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yaroshll/jomashop_scraper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Yaroshll/jomashop_scraper/issues"
+  },
+  "homepage": "https://github.com/Yaroshll/jomashop_scraper#readme",
+  "description": ""
 }
