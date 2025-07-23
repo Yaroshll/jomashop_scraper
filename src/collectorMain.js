@@ -5,7 +5,7 @@ import { collectProductUrls } from "./urlcollector.js";
 // ✅ Define all targets with optional extraTags
 const TARGETS = [
   {
-    url: "https://www.jomashop.com/filters/skin-care-products?department=Skincare&beauty_group=Body",
+    url: "https://www.jomashop.com/collections/skin-care-products/Skincare-Skin-Care-Products~c3VidHlwZX5Ta2luY2FyZQ",
     extraTags: ["skincare", "body"],
   },
   {    url: "https://www.jomashop.com/filters/makeup?subtype=Bath+%26+Body%7CSkincare%7CTools+%26+Brushes",
@@ -24,7 +24,7 @@ async function main() {
 
       const result = await collectProductUrls(
         target.url,
-        40, // minDiscount
+        0, // minDiscount
         target.extraTags
       );
 
