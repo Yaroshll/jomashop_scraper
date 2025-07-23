@@ -1,18 +1,48 @@
+import fs from "fs";
+import path from "path";
 import { collectProductUrls } from "./urlcollector.js";
 
-const TARGET_URL = `https://www.jomashop.com/filters/skin-care-products?department=Skincare&beauty_group=Body`;
-const MIN_DISCOUNT = 0;
+// ✅ INPUT: each target contains a URL and optional tags
+const TARGETS = [
+  {
+    url: "https://www.jomashop.com/filters/skin-care-products?department=Skincare&beauty_group=Body",
+    extraTags: ["skincare", "body"],
+  },
+  {
+    url: "https://www.jomashop.com/filters/makeup?subtype=Bath+%26+Body%7CSkincare%7CTools+%26+Brushes",
+    extraTags: ["s", "test"],
+  },
+];
 
 async function main() {
   try {
     console.log("🚀 Starting Jomashop URL collector");
-    const result = await collectProductUrls(TARGET_URL, MIN_DISCOUNT);
 
-    console.log("\n📊 Collection Summary:");
-    console.log(`- Total Products: ${result.summary.totalProducts}`);
-    console.log(`- Category: ${result.summary.brandType}`);
-    console.log(`- Minimum Discount: ${result.summary.minDiscount}%`);
-    console.log("✅ Collection complete");
+    const results = [];
+
+    for (const target of TARGETS) {
+      console.log(`\n➡️ Collecting from: ${target.url}`);
+      const result = await collectProductUrls(
+        target.url,
+        40, // minDiscount
+        target.extraTags
+      );
+      results.push(result);
+
+      console.log("📊 Summary:");
+      console.log(`- Tags: ${target.extraTags.join(", ")}`);
+      console.log(`- Total Products: ${result.summary.totalProducts}`);
+      console.log(`- Category: ${result.summary.brandType}`);
+    }
+
+    // ✅ Save all results in a combined file
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const outputDir = "URL_scraper_output";
+    fs.mkdirSync(outputDir, { recursive: true });
+
+    const filename = path.join(outputDir, `jomashop_combined_${timestamp}.json`);
+    fs.writeFileSync(filename, JSON.stringify(results, null, 2));
+    console.log(`\n✅ All results saved to ${filename}`);
   } catch (error) {
     console.error("❌ Fatal error:", error);
     process.exit(1);
