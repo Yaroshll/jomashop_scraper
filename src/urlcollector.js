@@ -196,41 +196,25 @@ async function extractProductUrls(page, domain, minDiscount) {
     { domain, minDiscount }
   );
 }
-function formatOutput({ urlArray, categoryUrl, minDiscount, arraySize = 10 }) {
-  const chunked = {};
-  for (let i = 0; i < urlArray.length; i += arraySize) {
-    chunked[`array${Math.floor(i / arraySize) + 1}`] = urlArray.slice(
-      i,
-      i + arraySize
-    );
-  }
-
-  const brandType = new URL(categoryUrl).pathname
-    .replace(/\//g, "")
-    .replace(/-/g, " ");
-
-  return {
-    urls: chunked,
-    summary: {
-      totalProducts: urlArray.length,
-      brandType,
-      minDiscount,
-      collectedAt: new Date().toISOString(),
-    },
-  };
-}
 
 function saveResults(output) {
-  const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  if (!fs.existsSync("URL_scraper_output")) {
-    fs.mkdirSync("URL_scraper_output", { recursive: true });
+  try {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const outputDir = "URL_scraper_output";
+    
+    // Create directory if it doesn't exist
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+    
+    const filename = path.join(outputDir, `jomashop_urls_${timestamp}.json`);
+    const dataToSave = JSON.stringify(output, null, 2);
+    
+    fs.writeFileSync(filename, dataToSave);
+    console.log(`✅ Successfully saved results to ${filename}`);
+    return filename;
+  } catch (error) {
+    console.error("❌ Error saving results:", error);
+    throw error;
   }
-  const filename = path.join(
-    "URL_scraper_output",
-    `jomashop_urls_${timestamp}.json`
-  );
-
-  fs.writeFileSync(filename, JSON.stringify(output, null, 2));
-
-  return filename;
 }

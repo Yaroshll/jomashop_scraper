@@ -15,19 +15,26 @@ async function main() {
     console.log("🚀 Starting Jomashop URL collector");
     const result = await collectProductUrls(inputObject, MIN_DISCOUNT);
 
-    console.log("\n📊 Collection Summary:");
+    console.log("\n📊 Global Summary:");
+    console.log(`- Total Arrays: ${result.summary.totalArrays}`);
     console.log(`- Total Products: ${result.summary.totalProducts}`);
     console.log(`- Minimum Discount: ${result.summary.minDiscount}%`);
-    console.log("✅ Collection complete");
-    
-    // Example of accessing the results:
-    console.log("\nSample Results:");
-    for (const [key, value] of Object.entries(result)) {
-      if (key.startsWith("array")) {
-        console.log(`- ${key}: ${value.urls.length} products`);
-        console.log(`  Tags: ${value.extraTags.join(", ")}`);
+    console.log(`- Collected At: ${result.summary.collectedAt}`);
+
+    console.log("\n🔍 Detailed Array Summaries:");
+    if (result.arrays) {
+      for (const [arrayKey, arrayData] of Object.entries(result.arrays)) {
+        console.log(`\n${arrayKey}:`);
+        console.log(`- Products: ${arrayData.summary.productCount}`);
+        console.log(`- Source URL: ${arrayData.summary.sourceUrl}`);
+        console.log(`- Tags: ${arrayData.summary.tags.join(", ")}`);
+        console.log(`- Scraped At: ${arrayData.summary.scrapedAt}`);
       }
+    } else {
+      console.log("No arrays found in results");
     }
+
+    console.log("\n✅ Collection complete");
   } catch (error) {
     console.error("❌ Fatal error:", error);
     process.exit(1);
