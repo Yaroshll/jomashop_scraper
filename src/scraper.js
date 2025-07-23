@@ -3,7 +3,7 @@ import path from "path";
 import { launchBrowser } from "./helpers/browser.js";
 import { handleAllPopups } from "./helpers/popupHandler.js"; // Updated import name
 
-export async function collectProductUrls(categoryUrl, minDiscount = 40) {
+export async function collectProductUrls(categoryUrl, minDiscount = 0) {
   const browser = await launchBrowser();
   const context = await browser.newContext({
     viewport: { width: 375, height: 812 }, // Mobile viewport
