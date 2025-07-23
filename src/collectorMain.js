@@ -2,14 +2,13 @@ import fs from "fs";
 import path from "path";
 import { collectProductUrls } from "./urlcollector.js";
 
-// ✅ INPUT: each target contains a URL and optional tags
+// ✅ Define all targets with optional extraTags
 const TARGETS = [
   {
     url: "https://www.jomashop.com/filters/skin-care-products?department=Skincare&beauty_group=Body",
     extraTags: ["skincare", "body"],
   },
-  {
-    url: "https://www.jomashop.com/filters/makeup?subtype=Bath+%26+Body%7CSkincare%7CTools+%26+Brushes",
+  {    url: "https://www.jomashop.com/filters/makeup?subtype=Bath+%26+Body%7CSkincare%7CTools+%26+Brushes",
     extraTags: ["s", "test"],
   },
 ];
@@ -22,11 +21,13 @@ async function main() {
 
     for (const target of TARGETS) {
       console.log(`\n➡️ Collecting from: ${target.url}`);
+
       const result = await collectProductUrls(
         target.url,
         40, // minDiscount
         target.extraTags
       );
+
       results.push(result);
 
       console.log("📊 Summary:");
@@ -35,7 +36,7 @@ async function main() {
       console.log(`- Category: ${result.summary.brandType}`);
     }
 
-    // ✅ Save all results in a combined file
+    // ✅ Save all results in one file
     const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
     const outputDir = "URL_scraper_output";
     fs.mkdirSync(outputDir, { recursive: true });
