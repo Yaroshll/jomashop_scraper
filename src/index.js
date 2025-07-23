@@ -2,11 +2,9 @@ import { launchBrowser } from "./helpers/browser.js";
 import { scrapeProduct } from "./helpers/scraper.js";
 import { exportToExcel } from "./helpers/excel.js";
 
-const extraTags = ["women"];
+const extraTags = ["Beauty",""];
 
-const productUrls = [
-
-];
+const productUrls = [];
 const genderFromCollector = "women";
 
 /**

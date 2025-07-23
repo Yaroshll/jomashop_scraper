@@ -1,6 +1,6 @@
 import { collectProductUrls } from "./urlcollector.js";
 
-const TARGET_URL = `https://www.jomashop.com/beauty.html`;
+const TARGET_URL = `https://www.jomashop.com/filters/makeup?subtype=Makeup&beauty_group=Nails`;
 const MIN_DISCOUNT = 0;
 
 async function main() {
