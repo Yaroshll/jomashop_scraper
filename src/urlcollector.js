@@ -3,74 +3,104 @@ import path from "path";
 import { launchBrowser } from "./helpers/browser.js";
 import { handleAllPopups } from "./helpers/popupHandler.js";
 
-export async function collectProductUrls(categoryUrl, minDiscount = 0, extraTags = []) {
+export async function collectProductUrls(inputObject, minDiscount = 40) {
   const browser = await launchBrowser();
   const context = await browser.newContext({
-    viewport: { width: 375, height: 812 },
     userAgent:
       "Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1",
   });
 
   const page = await context.newPage();
   const domain = "https://www.jomashop.com";
-  const allUrls = new Set();
-  let loadMoreAttempts = 0;
-  const maxLoadMoreAttempts = 100;
+  let results = {
+    arrays: {},  // This will store all arrays with their details
+    summary: {
+      totalProducts: 0,
+      totalArrays: 0,
+      collectedAt: new Date().toISOString(),
+      minDiscount: minDiscount
+    }
+  };
 
   try {
-    console.log(`🌐 Navigating to: ${categoryUrl}`);
+    // Process each URL in the input object
+    for (const [key, value] of Object.entries(inputObject)) {
+      if (key.startsWith("url")) {
+        const arrayNumber = key.substring(3);
+        const categoryUrl = value;
+        const extraTags = inputObject[`extraTags${arrayNumber}`] || [];
+        
+        console.log(`🚀 Processing URL: ${categoryUrl}`);
+        let currentUrl = categoryUrl;
+        let pageNumber = 1;
+        let visited = new Set();
+        let urlArray = [];
 
-    try {
-      await page.goto(categoryUrl, {
-        waitUntil: "domcontentloaded",
-        timeout: 3000,
-      });
-    } catch (error) {
-      console.log("⚠️ Initial load timed out, retrying...");
-      await page.goto(categoryUrl, {
-        waitUntil: "domcontentloaded",
-        timeout: 12000,
-      });
+        while (currentUrl && !visited.has(currentUrl)) {
+          visited.add(currentUrl);
+          console.log(`➡️ Scraping page ${pageNumber}`);
+          
+          await page.goto(currentUrl, {
+            waitUntil: "domcontentloaded",
+            timeout: 12000,
+          });
+          await waitForProductList(page);
+
+          const newUrls = await extractProductUrls(page, domain, minDiscount);
+          console.log(`  + Found ${newUrls.length} products on this page`);
+          urlArray.push(...newUrls);
+
+          await handleAllPopups(page);
+
+          // Get next page link
+          const nextUrl = await page.evaluate((domain) => {
+            const nextBtn = document.querySelector(
+              "ul.pagination li.pagination-next a.page-link[href]"
+            );
+            if (nextBtn) {
+              const href = nextBtn.getAttribute("href");
+              return href.startsWith("http") ? href : domain + href;
+            }
+            return null;
+          }, domain);
+
+          if (nextUrl && !visited.has(nextUrl)) {
+            currentUrl = nextUrl;
+            pageNumber++;
+          } else {
+            break;
+          }
+        }
+
+        // Remove duplicates
+        const uniqueUrls = Array.from(new Set(urlArray));
+        
+        // Add to results with detailed info
+        const arrayKey = `array${arrayNumber}`;
+        results.arrays[arrayKey] = {
+          urls: uniqueUrls,
+          extraTags: extraTags,
+          summary: {
+            productCount: uniqueUrls.length,
+            sourceUrl: categoryUrl,
+            tags: extraTags,
+            scrapedAt: new Date().toISOString()
+          }
+        };
+
+        // Update global summary
+        results.summary.totalProducts += uniqueUrls.length;
+        results.summary.totalArrays++;
+        
+        console.log(`✅ Collected ${uniqueUrls.length} products for ${arrayKey}`);
+      }
     }
 
-    await waitForProductList(page);
+    // Save results
+    const filename = saveResults(results);
+    console.log(`💾 Saved results to ${filename}`);
 
-    while (loadMoreAttempts < maxLoadMoreAttempts) {
-      const previousCount = allUrls.size;
-
-      const newUrls = await extractProductUrls(page, domain, minDiscount);
-      newUrls.forEach((url) => allUrls.add(url));
-
-      console.log(`📦 Total URLs so far: ${allUrls.size}`);
-
-      await handleAllPopups(page);
-
-      const loadedMore = await attemptLoadMore(page);
-      if (!loadedMore) {
-        console.log("⏹️ No more Load More button");
-        break;
-      }
-
-      try {
-        await waitForNewProducts(page, previousCount);
-        loadMoreAttempts = 0;
-      } catch {
-        loadMoreAttempts++;
-        console.warn(
-          `⚠️ Failed to detect new products (attempt ${loadMoreAttempts}/${maxLoadMoreAttempts})`
-        );
-        await page.waitForTimeout(2000);
-      }
-    }
-
-    const urlArray = Array.from(allUrls);
-    const output = formatOutput(urlArray, categoryUrl, minDiscount);
-    output.extraTags = extraTags;
-
-    const filename = saveResults(output);
-    console.log(`✅ Saved ${urlArray.length} product URLs to ${filename}`);
-
-    return output;
+    return results;
   } catch (error) {
     console.error("❌ Error during scraping:", error);
     throw error;
@@ -80,16 +110,49 @@ export async function collectProductUrls(categoryUrl, minDiscount = 0, extraTags
   }
 }
 
-// 🧩 Helpers
-
 async function waitForProductList(page) {
   try {
-    await page.waitForSelector(
-      "ul.productsList li.productItem, ul.ProductListingResults__productList li.ProductListingResults__productCard",
-      { timeout: 3000 }
+    // Scroll to the bottom in 4 steps
+    for (let i = 1; i <= 20; i++) {
+      await page.evaluate((progress) => {
+        // Scroll to a percentage of the page height
+        window.scrollTo({
+          top: document.body.scrollHeight * (progress / 20),
+          behavior: "smooth",
+        });
+      }, i);
+
+      // Wait a bit after each scroll to allow content to load
+      await page.waitForTimeout(500); // Adjust the delay as needed (e.g., 500-1500 ms)
+    }
+
+    // After scrolling, wait for products to finish loading (same as before)
+    await page.waitForFunction(
+      () => {
+        const products = document.querySelectorAll(
+          "ul.productsList li.productItem, ul.ProductListingResults__productList li.ProductListingResults__productCard"
+        );
+        const count = products.length;
+
+        const nextBtn = document.querySelector(
+          "ul.pagination li.pagination-next a.page-link[href]"
+        );
+
+        // If there is a next page, finish as soon as 60 products are loaded
+        if (nextBtn) {
+          return count >= 60;
+        }
+
+        // If there is NO next page, only finish after 5 seconds (from startTime)
+        if (!window._noNextPageTime) {
+          window._noNextPageTime = Date.now();
+        }
+        return Date.now() - window._noNextPageTime > 5000;
+      },
+      { timeout: 20000 } // adjust as needed
     );
   } catch (error) {
-    console.error("⏱️ Timed out waiting for product list");
+    console.error("Timed out waiting for product list to load");
     throw error;
   }
 }
@@ -105,13 +168,22 @@ async function extractProductUrls(page, domain, minDiscount) {
 
       return products
         .map((product) => {
+          // Check for tester label first
+          const testerLabel = product.querySelector(
+            'span.tag-item.tester-label svg[viewBox="0 0 24 24"]'
+          );
+          if (testerLabel) return null; // Skip tester products
+
           const discountEl = product.querySelector(
             ".tag-item.discount-label, .ProductCard__discount"
           );
-          if (!discountEl) return null;
+          if (!discountEl && minDiscount) return null;
 
-          const discountMatch = discountEl.textContent.trim().match(/(\d+)%/);
-          if (!discountMatch || parseInt(discountMatch[1]) < minDiscount)
+          const discountMatch = discountEl?.textContent.trim().match(/(\d+)%/);
+          if (
+            minDiscount &&
+            (!discountMatch || parseInt(discountMatch[1]) < minDiscount)
+          )
             return null;
 
           const link = product.querySelector(
@@ -124,50 +196,13 @@ async function extractProductUrls(page, domain, minDiscount) {
     { domain, minDiscount }
   );
 }
-
-async function attemptLoadMore(page) {
-  try {
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await page.waitForTimeout(1000);
-
-    const selectors = [
-      "button.LoadContent__button:not([disabled])",
-      "a.btn.primary.btn-link-as-btn",
-      'button[data-testid="load-more-button"]',
-    ];
-
-    for (const selector of selectors) {
-      const button = await page.$(selector);
-      if (button) {
-        await button.click();
-        await page.waitForTimeout(1500);
-        return true;
-      }
-    }
-    return false;
-  } catch (error) {
-    console.error("Load More button failed:", error.message);
-    return false;
-  }
-}
-
-async function waitForNewProducts(page, previousCount) {
-  await page.waitForFunction(
-    (prev) => {
-      const count = document.querySelectorAll(
-        "ul.productsList li.productItem, ul.ProductListingResults__productList li.ProductListingResults__productCard"
-      ).length;
-      return count > prev;
-    },
-    { timeout: 15000 },
-    previousCount
-  );
-}
-
-function formatOutput(urlArray, categoryUrl, minDiscount) {
+function formatOutput({ urlArray, categoryUrl, minDiscount, arraySize = 10 }) {
   const chunked = {};
-  for (let i = 0; i < urlArray.length; i += 10) {
-    chunked[`array${Math.floor(i / 10) + 1}`] = urlArray.slice(i, i + 10);
+  for (let i = 0; i < urlArray.length; i += arraySize) {
+    chunked[`array${Math.floor(i / arraySize) + 1}`] = urlArray.slice(
+      i,
+      i + arraySize
+    );
   }
 
   const brandType = new URL(categoryUrl).pathname
@@ -187,9 +222,15 @@ function formatOutput(urlArray, categoryUrl, minDiscount) {
 
 function saveResults(output) {
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const dir = "products_details_output";
-  const filename = path.join(dir, `jomashop_urls_${timestamp}.json`);
-  fs.mkdirSync(dir, { recursive: true });
+  if (!fs.existsSync("URL_scraper_output")) {
+    fs.mkdirSync("URL_scraper_output", { recursive: true });
+  }
+  const filename = path.join(
+    "URL_scraper_output",
+    `jomashop_urls_${timestamp}.json`
+  );
+
   fs.writeFileSync(filename, JSON.stringify(output, null, 2));
+
   return filename;
 }
