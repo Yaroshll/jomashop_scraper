@@ -3,8 +3,8 @@ import { collectProductUrls } from "./urlcollector.js";
 const inputObject = {
   extraTags1: ["skincare", "body"],
   url1: "https://www.jomashop.com/filters/skin-care-products?department=Skincare&beauty_group=Body",
-  extraTags2: ["makeup", "lipstick"],
-  url2: "https://www.jomashop.com/makeup/lipstick.html",
+  extraTags2: ["makeup", "eyes"],
+  url2: "https://www.jomashop.com/eye-products.html",
   // Add more URL and tag pairs as needed
 };
 
