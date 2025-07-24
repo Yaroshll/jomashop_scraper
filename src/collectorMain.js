@@ -6,7 +6,7 @@ const inputObject = {
   extraTags2: ["Beauty", "women","Lips","Lipstick","Lip Stain","Lip Plumpers","Lip Oil","Lip Liner","Gloss","Lip Treatments"],
   url2: "https://www.jomashop.com/filters/lip-products?department=Makeup",
   extraTags3: ["Makeup", "women","Bronzer","Concealer","Face Primer","Foundation","Highlighter","Setting Makeup","Blush","Face"],
-  url3: "jomashop.com/filters/face-products?department=Makeup",
+  url3: "https://www.jomashop.com/filters/face-products?department=Makeup",
   extraTags4: ["Makeup", "women","Mascara", "Unisex","Eye Cream","Makeup Remover","Lash Serums","Eyeshadow","Eyeliner","Eyebrows","Eye Primer","Eyes"],
   url4: "https://www.jomashop.com/filters/eye-products?department=Makeup%7CSkincare&gender=Unisex%7CWomens",
   extraTags5: ["Makeup", "women","Lips","Sponges ","Brushes","Lash Tools","Blotting Papers","Makeup Tools"],
