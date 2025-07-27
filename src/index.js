@@ -2,93 +2,108 @@ import { launchBrowser } from "./helpers/browser.js";
 import { scrapeProduct } from "./helpers/scraper.js";
 import { exportToExcel } from "./helpers/excel.js";
 
-const extraTags = ["Beauty",""];
-
-const productUrls = [];
-const genderFromCollector = "women";
+// Input object with URLs, tags, and gender per group
+const input = {
+ "array1": {
+      urls: [
+        "https://www.jomashop.com/purple-cosmetic-bag-vicky-tiel-603531000954.html",
+        "https://www.jomashop.com/shiseido-naname-fude-multi-eye-brush-729238146976.html",
+        "https://www.jomashop.com/mac-cosmetics-foundation-pump-773602124275.html",
+        "https://www.jomashop.com/bareminerals-makeup-barebr37.html",
+        "https://www.jomashop.com/nars-eye-lash-curler-607845018308.html",
+        "https://www.jomashop.com/nars-makeup-narsbr24-0-01oz.html",
+        "https://www.jomashop.com/bareminerals-cosmetics-barebr51.html",
+        "https://www.jomashop.com/nars-cosmetics-narsbr12.html",
+        "https://www.jomashop.com/christian-dior-ladies-dior-backstage-concealer-brush-13-makeup-3348901379144.html",
+        "https://www.jomashop.com/bareminerals-cosmetics-barebr26.html"
+      ],
+      extraTags: [
+        "Makeup",
+        "women",
+        "Lips",
+        "Sponges ",
+        "Brushes",
+        "Lash Tools",
+        "Blotting Papers",
+        "Makeup Tools"
+      ]}
+};
 
 /**
  * Main scraping function
  */
 async function main() {
-  // Launch browser instance
   const browser = await launchBrowser();
   const page = await browser.newPage();
-  const allRows = []; // Stores all scraped product data
+  const allRows = [];
 
   try {
-    let counter = 0;
-    // Process each product URL
-    for (const url of productUrls) {
-      console.log(`Scraping ${counter + 1}/${productUrls.length} -- ${url}`);
-      counter += 1;
+    for (const [groupName, groupData] of Object.entries(input)) {
+      const { urls, extraTags = [], gender = "women" } = groupData;
 
-      // Scrape product data from page
-      const productData = await scrapeProduct(page, url, genderFromCollector);
+      for (let i = 0; i < urls.length; i++) {
+        const url = urls[i];
+        console.log(`(${groupName}) Scraping ${i + 1}/${urls.length} -- ${url}`);
 
-      // Only proceed if we got valid data
-      if (
-        productData.title ||
-        productData.sku ||
-        productData.imageSrc.length > 0
-      ) {
-        // Generate tags from product metadata
-        const tags = [
-          ...extraTags,
-          ...(productData.breadcrumbs?.slice(1, -1) || []),
-        ]
-          .filter(Boolean)
-          .join(", ");
+        const productData = await scrapeProduct(page, url, gender);
 
-        // Create main product row
-        const mainRow = {
-          "Brand Name": productData.brandName,
-          Title: productData.title,
-          Handle: productData.handle,
-          SKU: productData.sku,
-          "Original Price": productData.originalPrice,
-          "Cost per item": productData.costPerItem,
-          "Price after coupon": productData.priceAfterCoupon,
-          "Body (HTML)": productData.bodyHTML,
-          "Image Src": productData.imageSrc[0] || "",
-          Breadcrumbs: productData.breadcrumbs,
-          Gender: productData.gender,
-          Tags: tags,
-          original_prodect_url: url,
-        };
-        allRows.push(mainRow);
+        if (
+          productData.title ||
+          productData.sku ||
+          productData.imageSrc.length > 0
+        ) {
+          const tags = [
+            ...extraTags,
+            ...(productData.breadcrumbs?.slice(1, -1) || []),
+          ]
+            .filter(Boolean)
+            .join(", ");
 
-        // Create additional rows for extra images
-        for (let i = 1; i < productData.imageSrc.length; i++) {
-          allRows.push({
-            "Brand Name": "",
-            Title: "",
+          const mainRow = {
+            "Brand Name": productData.brandName,
+            Title: productData.title,
             Handle: productData.handle,
-            SKU: "",
-            "Original Price": "",
-            "Cost per item": "",
-            "Price after coupon": "",
-            "Body (HTML)": "",
-            "Image Src": productData.imageSrc[i],
-            Breadcrumbs: [],
-            Gender: "",
-            Tags: "", // Empty for image rows
-          });
+            SKU: productData.sku,
+            "Original Price": productData.originalPrice,
+            "Cost per item": productData.costPerItem,
+            "Price after coupon": productData.priceAfterCoupon,
+            "Body (HTML)": productData.bodyHTML,
+            "Image Src": productData.imageSrc[0] || "",
+            Breadcrumbs: productData.breadcrumbs,
+            Gender: productData.gender,
+            Tags: tags,
+            original_prodect_url: url,
+          };
+          allRows.push(mainRow);
+
+          for (let j = 1; j < productData.imageSrc.length; j++) {
+            allRows.push({
+              "Brand Name": "",
+              Title: "",
+              Handle: productData.handle,
+              SKU: "",
+              "Original Price": "",
+              "Cost per item": "",
+              "Price after coupon": "",
+              "Body (HTML)": "",
+              "Image Src": productData.imageSrc[j],
+              Breadcrumbs: [],
+              Gender: "",
+              Tags: "",
+            });
+          }
+        } else {
+          console.log(`No valid data collected from ${url}`);
         }
-      } else {
-        console.log(`No valid data collected from ${url}`);
       }
     }
 
-    // Export data if we collected anything
     if (allRows.length > 0) {
-      // Generate timestamped filename
       const now = new Date();
       const dateString = now.toISOString().split("T")[0];
       const timeString = now.toTimeString().split(" ")[0].replace(/:/g, "-");
       const filename = `products_details_output/jomashop_watch_${dateString}_${timeString}.xlsx`;
 
-      // Export to Excel and CSV
       const { excel, csv } = await exportToExcel(allRows, filename);
       console.log(`Exported to:\n- Excel: ${excel}\n- CSV: ${csv}`);
     } else {
@@ -97,10 +112,8 @@ async function main() {
   } catch (error) {
     console.error("Fatal error:", error);
   } finally {
-    // Always close the browser when done
     await browser.close();
   }
 }
 
-// Start the scraping process
 main().catch(console.error);
