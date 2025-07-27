@@ -13,6 +13,8 @@ async function main() {
   const page = await browser.newPage();
   const allRows = [];
 
+
+  
   try {
     for (const [groupName, groupData] of Object.entries(input)) {
       const { urls, extraTags = [], gender = "women" } = groupData;
