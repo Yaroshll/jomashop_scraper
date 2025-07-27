@@ -1,0 +1,1265 @@
+{
+  "arrays": {
+    "array1": {
+      "urls": [
+        "https://www.jomashop.com/shiseido-perfect-refining-foundation-o60-natural-deep-ochre-1-0-oz-30-ml-730852107557.html",
+        "https://www.jomashop.com/declare-ladies-multi-lift-re-modeling-contour-cream-jar-cream-1-7-oz-skin-care-9007867003282.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Anti-Aging"
+      ],
+      "summary": {
+        "productCount": 2,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Anti-Aging-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5BbnRpLUFnaW5n",
+        "tags": [
+          "Makeup",
+          "Anti-Aging"
+        ],
+        "scrapedAt": "2025-07-27T03:00:55.166Z"
+      }
+    },
+    "array2": {
+      "urls": [
+        "https://www.jomashop.com/clinique-even-better-all-over-primer-color-corrector-20-oz-makeup-192333056899.html",
+        "https://www.jomashop.com/nars-ladies-afterglow-0-01-oz-dolce-vita-makeup-607845013563.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Balms & Treatments"
+      ],
+      "summary": {
+        "productCount": 2,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Balms-And-Treatments-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5CYWxtcyUyMCUyNiUyMFRyZWF0bWVudHM",
+        "tags": [
+          "Makeup",
+          "Balms & Treatments"
+        ],
+        "scrapedAt": "2025-07-27T03:01:20.789Z"
+      }
+    },
+    "array3": {
+      "urls": [
+        "https://www.jomashop.com/tatcha-ladies-the-silk-canvas-0-7-oz-makeup-793888733244.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Bases & Primers"
+      ],
+      "summary": {
+        "productCount": 1,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Bases-And-Primers-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5CYXNlcyUyMCUyNiUyMFByaW1lcnM",
+        "tags": [
+          "Makeup",
+          "Bases & Primers"
+        ],
+        "scrapedAt": "2025-07-27T03:01:46.320Z"
+      }
+    },
+    "array4": {
+      "urls": [
+        "https://www.jomashop.com/clinique-even-better-all-over-primer-color-corrector-20-oz-peach-makeup-192333055564.html",
+        "https://www.jomashop.com/laura-mercier-pure-canvas-primer-illuminating-50ml-1-7oz-736150179562.html",
+        "https://www.jomashop.com/laura-mercier-pure-canvas-primer-blurring-50ml-1-7oz-736150179524.html",
+        "https://www.jomashop.com/clarins-ladies-pore-less-blur-matte-stick-stick-skin-care-3380810258288.html",
+        "https://www.jomashop.com/smashbox-ladies-the-original-photo-finish-smooth-blur-primer-0-34-oz-makeup-607710099708.html",
+        "https://www.jomashop.com/loreal-ladies-infaillible-anti-redness-face-primer-0-67-oz-makeup-3600523530946.html",
+        "https://www.jomashop.com/smashbox-photo-finish-correct-anti-redness-primer-1-0-oz-607710098992.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Bases And Primers"
+      ],
+      "summary": {
+        "productCount": 7,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Bases-And-Primers-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5CYXNlcyUyMEFuZCUyMFByaW1lcnM",
+        "tags": [
+          "Makeup",
+          "Bases And Primers"
+        ],
+        "scrapedAt": "2025-07-27T03:02:11.735Z"
+      }
+    },
+    "array5": {
+      "urls": [
+        "https://www.jomashop.com/shiseido-innerglow-cheekpowder-07-cocoa-dusk-bronze-4g-0-14oz-730852148888.html",
+        "https://www.jomashop.com/clinique-ladies-cheek-pop-blush-pop-0-12-oz-07-cola-pop-bath-body-192333101179.html",
+        "https://www.jomashop.com/benefit-ladies-playtint-lip-cheek-stain-0-2-oz-makeup-602004129512.html",
+        "https://www.jomashop.com/clinique-ladies-cheek-pop-0-12-oz-02-peach-pop-makeup-192333101155.html",
+        "https://www.jomashop.com/blush-colour-infusion-peach-by-laura-mercier-for-women-0-2-oz-blush-736150159991.html",
+        "https://www.jomashop.com/nars-cosmetics-narsbs21.html",
+        "https://www.jomashop.com/guerlain-terracotta-blush-light-pink-01-0-17-oz-5-ml-a-soft-bluish-pink-3346470440371.html",
+        "https://www.jomashop.com/christian-dior-ladies-backstage-rosy-glow-color-awakening-universal-blush-0-15-oz-001-pink-makeup-3348901665810.html",
+        "https://www.jomashop.com/estee-lauder-ladies-pure-color-envy-sculpting-blush-0-25-oz-420-rebellious-rose-makeup-887167521384.html",
+        "https://www.jomashop.com/laura-mercier-blush-colour-infusion-chai-matte-dirty-rose-6g-0-02oz-736150159915.html",
+        "https://www.jomashop.com/laura-mercier-blush-colour-infusion-no-ginger-matte-pale-nude-6g-0-02oz-736150159878.html",
+        "https://www.jomashop.com/laura-mercier-blush-colour-infusion-no-rose-matte-rose-pink-6g-0-02oz-736150159953.html",
+        "https://www.jomashop.com/no-makeup-blush-by-perricone-md-for-women-0-3-oz-blush-651473707523.html",
+        "https://www.jomashop.com/nars-ladies-sex-appeal-0-16-blush-makeup-607845040330-narsbs14.html",
+        "https://www.jomashop.com/guerlain-terracotta-blush-deep-coral-blush-05-0-17-oz-5-ml-a-vibrant-ccral-3346470440418.html",
+        "https://www.jomashop.com/benefit-ladies-shellie-warm-0-08-oz-seashell-pink-fragrances-602004138644.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Blush"
+      ],
+      "summary": {
+        "productCount": 16,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Blush-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5CbHVzaA",
+        "tags": [
+          "Makeup",
+          "Blush"
+        ],
+        "scrapedAt": "2025-07-27T03:02:37.085Z"
+      }
+    },
+    "array6": {
+      "urls": [
+        "https://www.jomashop.com/benefit-ladies-hoola-matte-bronzer-0-08-oz-makeup-602004138620.html",
+        "https://www.jomashop.com/benefit-ladies-hoola-matte-bronzer-0-28-oz-makeup-602004138729.html",
+        "https://www.jomashop.com/benefit-hoola-light-matte-bronzer-hoola-lite-8g-0-28oz-602004138262.html",
+        "https://www.jomashop.com/guerlain-ladies-terracotta-light-the-sun-kissed-healthy-glow-powder-0-3-oz-03-medium-warm-makeup-3346470435629.html",
+        "https://www.jomashop.com/christian-dior-dior-forever-couture-luminizer-intense-highlighting-powder-03-pearlescent-glow-6g-0-21oz-3348901566803.html",
+        "https://www.jomashop.com/guerlain-ladies-terracotta-light-the-sun-kissed-healthy-glow-powder-0-3-oz-02-medium-cool-makeup-3346470435612.html",
+        "https://www.jomashop.com/guerlain-ladies-terracotta-light-the-sun-kissed-healthy-glow-powder-0-3-oz-01-light-warm-makeup-3346470435605.html",
+        "https://www.jomashop.com/perricone-md-no-makeup-highlighter-10ml-0-3oz-651473707547.html",
+        "https://www.jomashop.com/sunkissed-ladies-sunkissed-bronzing-compact-makeup-5055193508074.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Bronzer"
+      ],
+      "summary": {
+        "productCount": 9,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Bronzer-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5Ccm9uemVy",
+        "tags": [
+          "Makeup",
+          "Bronzer"
+        ],
+        "scrapedAt": "2025-07-27T03:03:02.548Z"
+      }
+    },
+    "array7": {
+      "urls": [
+        "https://www.jomashop.com/estee-lauder-ladies-brow-now-brow-defining-pencil-0-04-oz-03-brunette-makeup-887167189966.html",
+        "https://www.jomashop.com/benefit-unisex-precisely-my-brow-pencil-ultra-fine-brow-defining-0-08-oz-4-medium-makeup-602004071330.html",
+        "https://www.jomashop.com/benefit-ladies-precisely-my-brow-pencil-05-deep-makeup-602004071347.html",
+        "https://www.jomashop.com/benefit-ladies-precisely-my-brow-pencil-ultra-fine-brow-defining-pencil-0-002-oz-shade-3-5-makeup-602004095053.html",
+        "https://www.jomashop.com/benefit-precisely-my-brow-pencil-ultra-fine-brow-defining-pencil-0-002-oz-3-medium-makeup-602004071323.html",
+        "https://www.jomashop.com/benefit-ladies-precisely-my-brow-pencil-ultra-fine-brow-defining-02-lght-makeup-602004071316.html",
+        "https://www.jomashop.com/benefit-gimme-brow-volumizing-fiber-gel-3-5-warm-auburn-brown-3g-0-1oz-602004095350.html",
+        "https://www.jomashop.com/benefit-precisely-my-brow-pencil-ultra-fine-brow-defining-pencil-4-5-neutral-deep-brown-0-08g-0-002oz-602004095060.html",
+        "https://www.jomashop.com/benefit-precisely-my-brow-pencil-ultra-fine-brow-defining-pencil-2-5-neutral-blonde-0-08g-0-002oz-602004114204.html",
+        "https://www.jomashop.com/benefit-precisely-my-brow-pencil-ultra-fine-brow-defining-pencil-3-75-warm-medium-brown-0-08g-0-002oz-602004112750.html",
+        "https://www.jomashop.com/nars-ladies-brow-perfector-0-003-oz-makassar-auburn-cool-makeup-607845011323.html",
+        "https://www.jomashop.com/shiseido-unisex-brow-inktrio-2-makeup-729238147744.html",
+        "https://www.jomashop.com/benefit-ladies-goof-proof-brow-pencil-easy-shape-fill-05-deep-makeup-602004071279.html",
+        "https://www.jomashop.com/nars-brow-perfector-komo-medium-brown-warm-0-1g-0-003oz-607845011330.html",
+        "https://www.jomashop.com/nars-brow-perfector-naia-medium-brown-cool-0-1g-0-003oz-607845011347.html",
+        "https://www.jomashop.com/bareminerals-strength-length-serum-infused-brow-gel-honey-5ml-0-16oz-098132573936.html",
+        "https://www.jomashop.com/lancome-brow-define-pencil-04-light-brown-0-09g-0-003oz-3614271876188.html",
+        "https://www.jomashop.com/shiseido-brow-inktrio-01-blonde-0-31g-0-01oz-729238147737.html",
+        "https://www.jomashop.com/guerlain-ladies-brow-g-the-brow-pencil-0-003-oz-04-dark-brown-makeup-3346470439726.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Brow Pens & Powders"
+      ],
+      "summary": {
+        "productCount": 19,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Brow-Pens-And-Powders-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5Ccm93JTIwUGVucyUyMCUyNiUyMFBvd2RlcnM",
+        "tags": [
+          "Makeup",
+          "Brow Pens & Powders"
+        ],
+        "scrapedAt": "2025-07-27T03:03:28.016Z"
+      }
+    },
+    "array8": {
+      "urls": [
+        "https://www.jomashop.com/ilia-beauty-ladies-finishing-powder-brush-tools-brushes-818107026737.html",
+        "https://www.jomashop.com/nars-no-14-bronzer-brush-194251005256.html",
+        "https://www.jomashop.com/nars-no-48-brow-defining-brush-607845018506.html",
+        "https://www.jomashop.com/camera-ready-precise-highlighting-brush-by-smashbox-for-women-1-pc-brush-607710062467.html",
+        "https://www.jomashop.com/brow-master-brush-by-bareminerals-for-women-1-pc-brush-98132427901.html",
+        "https://www.jomashop.com/nars-ladies-blending-brush-no-22-tools-brushes-194251005409.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Brushes"
+      ],
+      "summary": {
+        "productCount": 6,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Brushes-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5CcnVzaGVz",
+        "tags": [
+          "Makeup",
+          "Brushes"
+        ],
+        "scrapedAt": "2025-07-27T03:03:53.447Z"
+      }
+    },
+    "array9": {
+      "urls": [
+        "https://www.jomashop.com/estee-lauder-gentle-eye-makeup-remover-3-4-oz-elcl1.html",
+        "https://www.jomashop.com/clarins-beauty-and-personal-care-clcll1b.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Cleansers"
+      ],
+      "summary": {
+        "productCount": 2,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Cleansers-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5DbGVhbnNlcnM",
+        "tags": [
+          "Makeup",
+          "Cleansers"
+        ],
+        "scrapedAt": "2025-07-27T03:04:18.863Z"
+      }
+    },
+    "array10": {
+      "urls": [
+        "https://www.jomashop.com/nars-cosmetics-narscncr12.html",
+        "https://www.jomashop.com/clinique-even-better-all-over-concealer-eraser-wn-125-mahogany-0-2-oz-192333057476.html",
+        "https://www.jomashop.com/it-cosmetics-ladies-bye-bye-dark-spots-concealer-serum-0-22-oz-tan-cool-40-makeup-3605972732729.html",
+        "https://www.jomashop.com/estee-lauder-double-wear-stay-in-place-flawless-wear-concealer-7c-cool-24-oz-887167480490.html",
+        "https://www.jomashop.com/laura-mercier-ladies-flawless-fusion-0-23-oz-3n-makeup-736150161970.html",
+        "https://www.jomashop.com/estee-lauder-cosmetics-eldowecn15.html",
+        "https://www.jomashop.com/nars-cosmetics-narscncr13.html",
+        "https://www.jomashop.com/nars-ladies-soft-matte-concealer-0-22-oz-cafe-con-leche-light-2-6-makeup-607845022473.html",
+        "https://www.jomashop.com/guerlain-ladies-precious-light-rejuvenating-illuminator-concealer-0-06-oz-1-5-makeup-3346470437777.html",
+        "https://www.jomashop.com/estee-lauder-double-wear-instant-fix-concealer-24h-concealer-hydra-prep-5n-deep-neutral-12ml-0-41oz-887167449763.html",
+        "https://www.jomashop.com/clinique-even-better-all-over-concealer-eraser-cn-70-vanilla-6ml-0-2oz-020714968939.html",
+        "https://www.jomashop.com/shiseido-synchro-skin-self-refreshing-concealer-304-medium-balanced-tone-for-medium-tan-skin-5-8ml-0-19oz-730852157361.html",
+        "https://www.jomashop.com/nars-radiant-creamy-concealer-cafe-con-leche-6ml-0-22oz-607845012252.html",
+        "https://www.jomashop.com/flawless-fusion-ultra-longwear-concealer-2w-by-laura-mercier-for-women-0-23-oz-concealer-736150161932.html",
+        "https://www.jomashop.com/flawless-fusion-ultra-longwear-concealer-2c-by-laura-mercier-for-women-0-23-oz-concealer-736150161895.html",
+        "https://www.jomashop.com/flawless-fusion-ultra-longwear-concealer-3c-by-laura-mercier-for-women-0-23-oz-concealer-736150161956.html",
+        "https://www.jomashop.com/radiant-creamy-concealer-2-5-creme-brulee-light-by-nars-for-women-0-22-oz-concealer-607845012665.html",
+        "https://www.jomashop.com/guerlain-terracotta-natural-perfection-neutral-concealer-1-5n-0-17-oz-5-ml-24-hour-wear-light-skinnatural-beige-undertones-3346470440234.html",
+        "https://www.jomashop.com/urban-decay-ladies-stay-naked-correcting-concealer-liquid-0-35-oz-70ny-dark-neutral-yellow-makeup-3605972134127.html",
+        "https://www.jomashop.com/rimmel-london-ladies-the-multi-tasker-full-coverage-concealer-0-33-oz-no-030-light-makeup-3616301273134.html",
+        "https://www.jomashop.com/nars-ladies-radiant-creamy-concealer-0-22-oz-medium-makeup-194251002989.html",
+        "https://www.jomashop.com/shiseido-ladies-synchro-skin-correcting-gelstick-concealer-0-088-oz-skin-care-730852157248.html",
+        "https://www.jomashop.com/lancome-ladies-idole-ultra-wear-concealer-0-33-oz-010-beige-porcelain-skin-care-3614273074476-lb7701.html",
+        "https://www.jomashop.com/laura-mercier-makeup-laflfscn5-0-27oz.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Concealer"
+      ],
+      "summary": {
+        "productCount": 24,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Concealer-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5Db25jZWFsZXI",
+        "tags": [
+          "Makeup",
+          "Concealer"
+        ],
+        "scrapedAt": "2025-07-27T03:04:44.360Z"
+      }
+    },
+    "array11": {
+      "urls": [
+        "https://www.jomashop.com/anna-sui-ladies-fantasia-mermaid-edt-spray-1-7-oz-makeup-0-85715297174-085715297174.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Eau de Toilette"
+      ],
+      "summary": {
+        "productCount": 1,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Eau-de-Toilette-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5FYXUlMjBkZSUyMFRvaWxldHRl",
+        "tags": [
+          "Makeup",
+          "Eau de Toilette"
+        ],
+        "scrapedAt": "2025-07-27T03:05:09.744Z"
+      }
+    },
+    "array12": {
+      "urls": [
+        "https://www.jomashop.com/clinique-ladies-quickliner-for-brows-0-002-oz-03-soft-brown-makeup-192333128695.html",
+        "https://www.jomashop.com/clinique-ladies-quickliner-for-brows-0-002-oz-04-deep-brown-makeup-192333128701.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Eyebrow Liner"
+      ],
+      "summary": {
+        "productCount": 2,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Eyebrow-Liner-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5FeWVicm93JTIwTGluZXI",
+        "tags": [
+          "Makeup",
+          "Eyebrow Liner"
+        ],
+        "scrapedAt": "2025-07-27T03:05:35.209Z"
+      }
+    },
+    "array13": {
+      "urls": [
+        "https://www.jomashop.com/shiseido-brow-inktrio-ebony.html",
+        "https://www.jomashop.com/benefit-ladies-gimme-brow-volumizing-fiber-gel-gel-shade-3-makeup-602004103123.html",
+        "https://www.jomashop.com/benefit-gimme-brow-volumizing-eyebrow-gel-602004095367.html",
+        "https://www.jomashop.com/urban-decay-ladies-brow-blade-waterproof-pencil-ink-stain-0-01-oz-cafe-kitty-makeup-3605971774676.html",
+        "https://www.jomashop.com/ilia-beauty-ladies-in-full-micro-tip-brow-pencil-0-003-oz-soft-black-makeup-840306400100.html",
+        "https://www.jomashop.com/benefit-ladies-dual-ended-angled-eyebrow-brush-makeup-602004129895.html",
+        "https://www.jomashop.com/benefit-ladies-precisely-my-brow-03-medium-makeup-602004085566.html",
+        "https://www.jomashop.com/brow-wiz-chocolate-by-anastasia-beverly-hills-for-women-0-003-oz-eyebrow-689304860086.html",
+        "https://www.jomashop.com/benefit-ladies-gimme-brow-volumizing-fiber-eyebrow-pencil-0-04-oz-2-5-neutral-blonde-fragrances-602004135254.html",
+        "https://www.jomashop.com/rimmel-london-ladies-brow-this-way-filler-fixer-eyebrow-definer-0-0088-oz-no-004-soft-black-makeup-3614225118128.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-dual-precision-brow-liner-black-brown-makeup-5056153514715.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-fluffy-fibre-brow-wax-0-09-oz-black-brown-makeup-5056153515125.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-fluffy-fibre-brow-wax-0-09-oz-taupe-grey-makeup-746480236941.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-eyebrow-gel-gel-0-105-oz-taupe-makeup-5056153515552.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-fluffy-fibre-brow-wax-0-09-oz-blonde-makeup-5056153515101.html",
+        "https://www.jomashop.com/brow-wiz-soft-brown-by-anastasia-beverly-hills-for-women-0-003-oz-eyebrow-689304860079.html",
+        "https://www.jomashop.com/benefit-ladies-gimme-brow-volumizing-fiber-eyebrow-pencil-0-042-oz-no-05-warm-black-brown-makeup-602004135322.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-microsculpt-brow-pencil-0-003-oz-blonde-makeup-746480228618.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-clear-brow-gel-0-32-oz-makeup-5056153515088.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-fix-it-brow-lamination-effect-gel-0-08-oz-clear-makeup-5056153515484.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-fluffy-fibre-brow-wax-0-09-oz-brunette-makeup-5056153515118.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-microsculpt-brow-pencil-0-003-oz-black-brown-makeup-5056153515514.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-fluffy-fibre-brow-wax-0-09-oz-clear-makeup-746480237993.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-microsculpt-brow-pencil-0-003-oz-brunette-makeup-5056153515507.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-eyebrow-gel-0-105-oz-blonde-makeup-640206221689.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-super-stay-liner-essential-0-042-oz-brown-makeup-5056153500190.html",
+        "https://www.jomashop.com/nars-brow-perfector-atacama-003-oz-1-ml-607845011361.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Eyebrows"
+      ],
+      "summary": {
+        "productCount": 27,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Eyebrows-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5FeWVicm93cw",
+        "tags": [
+          "Makeup",
+          "Eyebrows"
+        ],
+        "scrapedAt": "2025-07-27T03:06:00.693Z"
+      }
+    },
+    "array14": {
+      "urls": [
+        "https://www.jomashop.com/nars-eyelashes-numero-9-607845024194.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Eyelashes"
+      ],
+      "summary": {
+        "productCount": 1,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Eyelashes-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5FeWVsYXNoZXM",
+        "tags": [
+          "Makeup",
+          "Eyelashes"
+        ],
+        "scrapedAt": "2025-07-27T03:06:26.074Z"
+      }
+    },
+    "array15": {
+      "urls": [
+        "https://www.jomashop.com/mac-ladies-brushstroke-24-hour-liner-brush-brown-makeup-773602543885.html",
+        "https://www.jomashop.com/shiseido-ladies-kajal-inkartist-shadow-liner-brow-10-makeup-730852147317.html",
+        "https://www.jomashop.com/the-balm-cosmetics-ballqel1.html",
+        "https://www.jomashop.com/clinique-quickliner-intense-eye-liner-pencil-black-0-01-oz-3-ml-192333100899.html",
+        "https://www.jomashop.com/ilia-beauty-ladies-liquid-powder-chromatic-eye-tint-0-12-oz-burnish-makeup-818107029776.html",
+        "https://www.jomashop.com/benefit-precisely-602004071354.html",
+        "https://www.jomashop.com/estee-lauder-ladies-the-brow-multi-tasker-3-in-1-05-black-0-008-oz-eyebrow-pencil-makeup-887167251021.html",
+        "https://www.jomashop.com/smashbox-cosmetics-smaselw3.html",
+        "https://www.jomashop.com/clinique-ladies-clinique-quickliner-eyeliner-0-01-oz-03-intense-chocolate-makeup-192333100912.html",
+        "https://www.jomashop.com/guerlain-mad-eyes-intense-liquid-eyeliner-0-16-oz-01-glossy-black-makeup-3346470432147.html",
+        "https://www.jomashop.com/shiseido-kajal-inkartist-color-tea-house-1-730852147225.html",
+        "https://www.jomashop.com/clinique-cosmetics-cqhiimelp1.html",
+        "https://www.jomashop.com/laura-mercier-caviar-stick-eye-color-0-05-oz-pearl-makeup-736150182586.html",
+        "https://www.jomashop.com/clarins-3-dot-liner-black-0-7ml-0-023oz-3380810314014.html",
+        "https://www.jomashop.com/always-on-gel-liner-fishnet-by-smashbox-for-women-0-04-oz-eyeliner-607710057432.html",
+        "https://www.jomashop.com/always-on-gel-liner-brewed-by-smashbox-for-women-0-13-oz-eyeliner-607710056343.html",
+        "https://www.jomashop.com/nars-no-51-wet-dry-eyeliner-brush-narsbr30.html",
+        "https://www.jomashop.com/nars-makeup-narselg4-q.html",
+        "https://www.jomashop.com/clinique-cosmetics-cqelp1.html",
+        "https://www.jomashop.com/estee-lauder-cosmetics-elel1.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-dual-precision-brow-liner-blonde-makeup-5056153500367.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-super-stay-liquid-liner-0-058-oz-black-makeup-5056153500152.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-dual-precision-brow-liner-brunette-makeup-5056153514708.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-iconic-eye-crayon-luxe-latte-makeup-850027404554.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-iconic-eye-crayon-diamond-noir-makeup-850027404547.html",
+        "https://www.jomashop.com/guerlain-ladies-le-crayon-yeux-longlasting-waterproof-intense-color-eyeliner-no-04-plum-peony-makeup-3346470436619.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Eyeliner"
+      ],
+      "summary": {
+        "productCount": 26,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Eyeliner-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5FeWVsaW5lcg",
+        "tags": [
+          "Makeup",
+          "Eyeliner"
+        ],
+        "scrapedAt": "2025-07-27T03:06:51.474Z"
+      }
+    },
+    "array16": {
+      "urls": [
+        "https://www.jomashop.com/les-phyto-ombres-eyeshadow-23-silk-french-blue-by-sisley-for-women-0-05-oz-eyeshadow-3473311866103.html",
+        "https://www.jomashop.com/sisley-les-phyto-ombres-long-lasting-radiant-eyeshadow-33-metallic-jean-1-5g-0-05oz-3473311866165.html",
+        "https://www.jomashop.com/urban-decay-ladies-moondust-0-06-oz-bad-seed-makeup-3605972464767.html",
+        "https://www.jomashop.com/nars-single-eyeshadow-persia-0-04-oz-1-1-ml-607845053521.html",
+        "https://www.jomashop.com/buxom-empty-eye-shadow-customizable-bar-palette-1-0-oz-1-ml-098132407262.html",
+        "https://www.jomashop.com/caviar-stick-eye-colour-burnished-bronze-by-laura-mercier-for-women-0-64-oz-eye-shadow-736150126498.html",
+        "https://www.jomashop.com/laura-mercier-makeup-laures25.html",
+        "https://www.jomashop.com/tom-ford-ladies-cream-powder-eye-color-0-07-oz-emerald-isles-makeup-888066074605.html",
+        "https://www.jomashop.com/tom-ford-ladies-cream-powder-eye-color-0-07-oz-10-azure-sun-makeup-888066074612.html",
+        "https://www.jomashop.com/tarte-tartelette-engergy-amazonian-clay-palette-846733083282.html",
+        "https://www.jomashop.com/tom-ford-eye-color-quad-01-golden-mink-10g-0-35oz-888066011044.html",
+        "https://www.jomashop.com/nars-duo-powder-eyeshadow-kauai-0-14-oz-4-ml-607845039235.html",
+        "https://www.jomashop.com/suede-shade-liquid-eyeshadow-nude-awakening-by-stila-for-women-0-153-oz-eye-shadow-94800356580.html",
+        "https://www.jomashop.com/matte-eye-colour-plum-smoke-by-laura-mercier-for-women-0-09-oz-eye-shadow-736150069825.html",
+        "https://www.jomashop.com/caviar-stick-eye-colour-sugar-frost-by-laura-mercier-for-women-0-05-oz-eye-shadow-736150109415.html",
+        "https://www.jomashop.com/laura-mercier-caviar-stick-eye-color-0-05-oz-wild-rose-makeup-194250015935.html",
+        "https://www.jomashop.com/laura-mercier-caviar-stick-eye-color-0-05-oz-rose-thorn-makeup-194250025927.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Eyeshadow"
+      ],
+      "summary": {
+        "productCount": 17,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Eyeshadow-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5FeWVzaGFkb3c",
+        "tags": [
+          "Makeup",
+          "Eyeshadow"
+        ],
+        "scrapedAt": "2025-07-27T03:07:16.923Z"
+      }
+    },
+    "array17": {
+      "urls": [
+        "https://www.jomashop.com/shiseido-essentialist-eye-palette-04-kaigan-street-waters-0-18-oz-5-2-ml-730852147416.html",
+        "https://www.jomashop.com/buxom-buxom-x-ash-k-holm-eyeshadow-palette-194249002403.html",
+        "https://www.jomashop.com/olivia-palermo-ladies-eyeshadow-pallet-onaturel-makeup-840133717730.html",
+        "https://www.jomashop.com/olivia-palermo-ladies-eyeshadow-pallet-soiree-makeup-840133717747.html",
+        "https://www.jomashop.com/color-magic-ladies-eye-shadow-0-42-oz-warm-colors-makeup-895589400019.html",
+        "https://www.jomashop.com/urban-decay-ladies-naked-heat-palette-w-double-ended-blending-brush-makeup-256721472085.html",
+        "https://www.jomashop.com/color-magic-ladies-eye-shadow-0-42-oz-cool-colors-makeup-895589400026.html",
+        "https://www.jomashop.com/olivia-palermo-ladies-eyeshadow-pallet-regalia-makeup-840133700046.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Eyeshadow Palette"
+      ],
+      "summary": {
+        "productCount": 8,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Eyeshadow-Palette-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5FeWVzaGFkb3clMjBQYWxldHRl",
+        "tags": [
+          "Makeup",
+          "Eyeshadow Palette"
+        ],
+        "scrapedAt": "2025-07-27T03:07:42.371Z"
+      }
+    },
+    "array18": {
+      "urls": [
+        "https://www.jomashop.com/double-wear-stay-in-place-makeup-spf-10-3n1-ivory-beige-by-estee-lauder-for-women-1-oz-foundation-27131228387.html",
+        "https://www.jomashop.com/double-wear-stay-in-place-makeup-spf10-2c3-fresco-all-skin-types-by-estee-lauder-for-women-1-oz-makeup-27131187035.html",
+        "https://www.jomashop.com/estee-lauder-ladies-double-wear-stay-in-place-makeup-spf-10-1-oz-no-99-honey-bronze-makeup-027131977902.html",
+        "https://www.jomashop.com/estee-lauder-makeup-eldowefo6.html",
+        "https://www.jomashop.com/double-wear-stay-in-place-makeup-spf-10-05-4n1-shell-beige-by-estee-lauder-for-women-1-oz-makeup-27131187073-0027131187073.html",
+        "https://www.jomashop.com/estee-lauder-unisex-double-wear-stay-in-place-makeup-spf-10-1-oz-no-17-bone-1w1-makeup-027131392347.html",
+        "https://www.jomashop.com/estee-lauder-double-wear-stay-in-place-matte-powder-foundation-spf10-42-oz-3n1-ivory-beige-makeup-887167508712.html",
+        "https://www.jomashop.com/estee-lauder-double-wear-stay-in-place-matte-powder-foundation-42-oz-2c3-fresco-makeup-887167508651.html",
+        "https://www.jomashop.com/estee-lauder-double-wear-stay-in-place-matte-powder-foundation-spf-10-0-42-oz-4n1-shell-beige-makeup-887167508699.html",
+        "https://www.jomashop.com/clinique-ladies-even-better-clinical-serum-foundation-spf-20-1-oz-wn-04-bone-makeup-192333078259.html",
+        "https://www.jomashop.com/clinique-cosmetics-cqevbefo25.html",
+        "https://www.jomashop.com/guerlain-lingerie-de-peau-natural-foundation-06c-very-deep-cool-1-0-oz-3346470423077.html",
+        "https://www.jomashop.com/clinique-ladies-even-better-clinical-serum-foundation-spf-20-1-oz-cn-52-neutral-makeup-192333077870.html",
+        "https://www.jomashop.com/sisley-phyto-teint-ultra-clat-foundation-no-4-cinnamon-1-oz-30-ml-3473311805720.html",
+        "https://www.jomashop.com/clarins-everlasting-foundation-spf15-118-5-chocolate-30ml-1-1oz-3380814073214.html",
+        "https://www.jomashop.com/clinique-even-better-refresh-foundation-cn-40-cream-chamois-vf-1-0-oz-30-ml-020714918378.html",
+        "https://www.jomashop.com/make-up-for-ever-ladies-ultra-hd-invisible-cover-foundation-1-oz-y425-makeup-3548752085458.html",
+        "https://www.jomashop.com/clinique-even-better-clinical-serum-foundation-spf-20-1-cn-20-fair-makeup-192333077849.html",
+        "https://www.jomashop.com/lancome-teint-idole-ultra-wear-24h-wear-comfort-foundation-spf15-14-brownie-30ml-1-0-oz-3614271430397.html",
+        "https://www.jomashop.com/clinique-even-better-refresh-foundation-cn-28-ivory-vf-1-0-oz-30-ml-020714918354.html",
+        "https://www.jomashop.com/burberry-cosmetics-bybrigfo5.html",
+        "https://www.jomashop.com/clinique-cosmetics-cqstmafo4.html",
+        "https://www.jomashop.com/mac-ladies-studio-fix-fluid-spf15-1-0-oz-c5-makeup-773602289516.html",
+        "https://www.jomashop.com/elizabeth-arden-flawless-finish-sponge-on-cream-makeup-golden-case-0-8-oz-22-vanilla-makeup-085805150471.html",
+        "https://www.jomashop.com/elizabeth-arden-unisex-flawless-finish-sponge-on-cream-makeup-golden-case-0-8-oz-54-vanilla-shell-makeup-085805151331.html",
+        "https://www.jomashop.com/elizabeth-arden-flawless-finish-sponge-on-cream-makeup-golden-case-06-toasty-beige-23g-0-8oz-085805151669.html",
+        "https://www.jomashop.com/estee-lauder-double-wear-stay-in-place-makeup-spf-10-no-72-ivory-nude-1n1-30ml-1oz-027131934943.html",
+        "https://www.jomashop.com/estee-lauder-makeup-eldowefo69b.html",
+        "https://www.jomashop.com/estee-lauder-ladies-double-wear-stay-in-place-makeup-spf10-1-oz-sandalwood-makeup-0-27131978138-027131978138.html",
+        "https://www.jomashop.com/estee-lauder-unisex-double-wear-stay-in-place-makeup-spf-10-liquid-1-oz-no-98-spiced-sand-4n2-makeup-0027131977575-590016537.html",
+        "https://www.jomashop.com/estee-lauder-makeup-eldowefo80.html",
+        "https://www.jomashop.com/guerlain-lessentiel-natural-glow-foundation-16h-wear-spf-20-00w-porcelain-warm-30ml-1oz-3346470428133.html",
+        "https://www.jomashop.com/guerlain-lessentiel-natural-glow-foundation-16h-wear-spf-20-00c-porcelain-cool-30ml-1oz-3346470428034.html",
+        "https://www.jomashop.com/estee-lauder-ladies-double-wear-nude-water-fresh-makeup-spf-30-1-oz-2w2-rattan-makeup-887167332270.html",
+        "https://www.jomashop.com/guerlain-terracotta-le-teint-healthy-glow-natural-perfection-foundation-24h-wear-no-transfer-1-1-oz-2n-neutra-skin-care-3346470438460-g043846.html",
+        "https://www.jomashop.com/nars-ladies-light-reflecting-foundation-1-oz-patagonia-medium-1-2-makeup-194251070544.html",
+        "https://www.jomashop.com/laura-mercier-loose-setting-powder-translucent-medium-deep-29g-1oz-736150156532.html",
+        "https://www.jomashop.com/tarte-makeup-taempofo3.html",
+        "https://www.jomashop.com/la-prairie-cosmetics-lpskcafo18.html",
+        "https://www.jomashop.com/urban-decay-ladies-stay-naked-weightless-liquid-foundation-liquid-1-oz-80nn-deep-shade-intensity-makeup-3605972044969.html",
+        "https://www.jomashop.com/lancome-ladies-teint-idole-ultra-wear-24h-430c-1-oz-no-055-beige-ideal-skin-care-3614273792721-ld8966.html",
+        "https://www.jomashop.com/nars-ladies-soft-matte-complete-foundation-1-5-oz-syracuse-medium-deep-1-makeup-194251004167.html",
+        "https://www.jomashop.com/estee-lauder-double-wear-stay-in-place-matte-powder-foundation-spf-10-0-42-oz-3c2-pebble-makeup-887167508682.html",
+        "https://www.jomashop.com/nars-ladies-light-reflecting-foundation-1-oz-stromboli-medium-3-makeup-194251070629.html",
+        "https://www.jomashop.com/estee-lauder-double-wear-stay-in-place-makeup-4w2-toasty-toffee-a0-1-0-oz-027131977285.html",
+        "https://www.jomashop.com/lancome-unisex-teint-idole-ultra-wear-24h-wear-comfort-foundation-spf-15-1-oz-035-beige-dore-makeup-3614271430304.html",
+        "https://www.jomashop.com/shiseido-unisex-synchro-skin-radiant-lifting-foundation-spf-30-1-2-oz-420-bronze-makeup-730852167513.html",
+        "https://www.jomashop.com/dior-forever-foundation-spf-35-5n-neutral-by-christian-dior-for-women-1-oz-foundation-3348901437905-1.html",
+        "https://www.jomashop.com/double-wear-stay-in-place-makeup-spf-10-42-bronze-5w1-all-skin-types-by-estee-lauder-for-women-1-oz-makeup-27131392439.html",
+        "https://www.jomashop.com/dior-forever-foundation-spf-35-4-5n-neutral-by-christian-dior-for-women-1-oz-foundation-3348901437899.html",
+        "https://www.jomashop.com/estee-lauder-makeup-eldowefo4.html",
+        "https://www.jomashop.com/smashbox-cosmetics-smphotfopr1.html",
+        "https://www.jomashop.com/rimmel-london-ladies-kind-free-foundation-1-oz-no-103-true-ivory-makeup-3616304530449.html",
+        "https://www.jomashop.com/shiseido-ladies-perfect-refining-spf-15-1-0-oz-wb40-makeup-730852107823.html",
+        "https://www.jomashop.com/guerlain-ladies-meteorites-light-revealing-pearls-of-powder-0-7-oz-01-pearly-white-makeup-3346470441507.html",
+        "https://www.jomashop.com/nars-ladies-light-reflecting-loose-setting-powder-0-38-oz-stone-makeup-194251075969.html",
+        "https://www.jomashop.com/estee-lauder-double-wear-stay-in-place-matte-powder-foundation-spf-10-0-42-oz-4c1-outdoor-beige-makeup-887167508675.html",
+        "https://www.jomashop.com/nars-ladies-light-reflecting-foundation-1-oz-barcelona-medium-4-makeup-194251070667.html",
+        "https://www.jomashop.com/nars-ladies-light-reflecting-foundation-1-oz-vienna-light-4-5-makeup-194251070483.html",
+        "https://www.jomashop.com/nars-ladies-light-reflecting-foundation-1-oz-vanuatu-medium-3-5-makeup-194251070643.html",
+        "https://www.jomashop.com/nars-ladies-light-reflecting-foundation-1-oz-sahel-medium-2-5-makeup-194251070605.html",
+        "https://www.jomashop.com/nars-ladies-light-reflecting-foundation-1-oz-salzburg-light-3-5-makeup-194251070445.html",
+        "https://www.jomashop.com/shiseido-synchro-skin-self-refreshing-foundation-440-amber-1-0-oz-30-ml-730852160934.html",
+        "https://www.jomashop.com/shiseido-synchro-skin-self-refreshing-foundation-510-suede-1-0-oz-30-ml-730852160965.html",
+        "https://www.jomashop.com/laura-mercier-ladies-flawless-lumiere-radiance-perfecting-foundation-1-oz-3n1-5-latt-makeup-736150166821.html",
+        "https://www.jomashop.com/shiseido-unisex-synchro-skin-radiant-lifting-foundation-spf-30-1-2-oz-410-sunstone-makeup-730852167506.html",
+        "https://www.jomashop.com/clinique-ladies-beyond-perfecting-foundation-concealer-1-oz-8-25-oat-makeup-0-20714898403-020714898403.html",
+        "https://www.jomashop.com/nars-sheer-glow-foundation-sahel-1-0-oz-607845048626.html",
+        "https://www.jomashop.com/shiseido-synchro-skin-radiant-lifting-foundation-spf-30-430-cedar-30ml-1-2oz-730852167520.html",
+        "https://www.jomashop.com/estee-lauder-double-wear-stay-in-place-makeup-spf-10-no-03-outdoor-beige-4c1-30ml-1oz-027131187059.html",
+        "https://www.jomashop.com/nars-natural-radiant-longwear-foundation-stromboli-medium-3-for-medium-skin-with-olive-undertones-30ml-1oz-607845066132.html",
+        "https://www.jomashop.com/nars-sheer-glow-foundation-valencia-1-0-oz-607845048664.html",
+        "https://www.jomashop.com/natural-radiant-longwear-foundation-deauville-by-nars-for-women-1-oz-foundation-607845066057.html",
+        "https://www.jomashop.com/clinique-even-better-makeup-wn-30-biscuit-vf-1-0-oz-30-ml-020714977054.html",
+        "https://www.jomashop.com/clinique-even-better-glow-light-reflecting-makeup-cn-126-espresso-d-1-oz-020714854546.html",
+        "https://www.jomashop.com/clinique-even-better-makeup-33-espresso-1-0-oz-020714495510.html",
+        "https://www.jomashop.com/the-etherealist-skin-illuminating-foundation-ef-04-light-by-kevyn-aucoin-for-women-0-95-oz-foundation-836622006058.html",
+        "https://www.jomashop.com/sisley-ladies-phyto-teint-eclat-compac-3-natural-0-1-oz-foundation-makeup-3473311806031.html",
+        "https://www.jomashop.com/clinique-super-powder-double-face-makeup-07-matte-neutral-35-oz-cqsupofo5-020714066376.html",
+        "https://www.jomashop.com/clinique-makeup-cqsupofo4-0-35oz.html",
+        "https://www.jomashop.com/clinique-makeup-cqbepefo41.html",
+        "https://www.jomashop.com/clinique-makeup-cqbepefo7.html",
+        "https://www.jomashop.com/bareminerals-makeup-bareorfo14.html",
+        "https://www.jomashop.com/clinique-cosmetics-cqsupofo1.html",
+        "https://www.jomashop.com/bareminerals-cosmetics-bareorfo10.html",
+        "https://www.jomashop.com/bareminerals-cosmetics-barefo16.html",
+        "https://www.jomashop.com/bareminerals-cosmetics-barefo21.html",
+        "https://www.jomashop.com/clinique-cosmetics-cqstmafo3.html",
+        "https://www.jomashop.com/nars-cosmetics-narsfo62.html",
+        "https://www.jomashop.com/clinique-cosmetics-cqstmafo1.html",
+        "https://www.jomashop.com/clinique-cosmetics-cqbepefo4.html",
+        "https://www.jomashop.com/clinique-cosmetics-cqbepef11.html",
+        "https://www.jomashop.com/urban-decay-ladies-stay-naked-weightless-liquid-foundation-liquid-1-oz-60wr-medium-dark-shade-intensity-makeup-3605972044525.html",
+        "https://www.jomashop.com/rimmel-london-ladies-kind-free-foundation-1-oz-no-082-golden-ivory-makeup-3616304530401.html",
+        "https://www.jomashop.com/laura-mercier-flawless-lumiere-radiance-perfecting-foundation-0-05-oz-3c1-dune-makeup-736150166784.html",
+        "https://www.jomashop.com/make-up-for-ever-ladies-matte-velvet-skin-blurring-0-38-y455-praline-makeup-3548752129923.html",
+        "https://www.jomashop.com/make-up-forever-matte-velvet-skin-powder-foundation-0-16-oz-y505-cognac-makeup-3548752131698.html",
+        "https://www.jomashop.com/make-up-forever-matte-velvet-skin-powder-foundation-0-38-oz-y535-chestnut-makeup-3548752129978.html",
+        "https://www.jomashop.com/elizabeth-arden-ladies-flawless-finish-1-oz-460w-skin-care-085805227142.html",
+        "https://www.jomashop.com/shiseido-ladies-synchro-skin-spf-30-radiant-lifting-foundation-1-oz-no-440-amber-makeup-730852167537.html",
+        "https://www.jomashop.com/guerlain-ladies-parure-gold-skin-matte-1-18-oz-no-4n-neutral-skin-care-3346470436169.html",
+        "https://www.jomashop.com/shiseido-ladies-synchro-skin-spf-30-radiant-lifting-foundation-1-oz-no-510-suede-makeup-730852167568.html",
+        "https://www.jomashop.com/shiseido-ladies-synchro-skin-radiant-lifting-spf-30-foundation-1-0-oz-no-560-obsidian-makeup-730852167612.html",
+        "https://www.jomashop.com/shiseido-ladies-synchro-skin-spf-30-radiant-lifting-foundation-1-oz-no-520-rosewood-makeup-730852167575.html",
+        "https://www.jomashop.com/make-up-for-ever-ladies-ultra-hd-invisible-cover-foundation-1-oz-y535-makeup-3548752085540.html",
+        "https://www.jomashop.com/make-up-for-ever-ladies-matte-velvet-skin-blurring-powder-foundation-0-4-oz-r540-makeup-3548752129985.html",
+        "https://www.jomashop.com/shiseido-ladies-synchro-skin-radiant-lifting-spf-30-1-oz-no-450-copper-makeup-730852167544.html",
+        "https://www.jomashop.com/lancaster-ladies-infinite-bronze-sunlight-compact-cream-powder-spf-50-0-31-oz-makeup-3616304178047.html",
+        "https://www.jomashop.com/guerlain-ladies-meteorites-light-revealing-pearls-of-powder-0-7-oz-02-rose-makeup-3346470438767.html",
+        "https://www.jomashop.com/nars-ladies-soft-matte-complete-foundation-1-5-oz-salzburg-light-3-5-makeup-194251004020.html",
+        "https://www.jomashop.com/nars-ladies-light-reflecting-pressed-setting-powder-0-1-oz-crystal-makeup-194251076379.html",
+        "https://www.jomashop.com/guerlain-ladies-parure-gold-skin-matte-foundation-spf15-1-1-oz-1n-neutral-makeup-3346470436114.html",
+        "https://www.jomashop.com/future-solution-lx-total-radiance-foundation-spf-15-3-rose-by-shiseido-for-women-1-2-oz-foundation-729238139404.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Foundation"
+      ],
+      "summary": {
+        "productCount": 113,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Foundation-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5Gb3VuZGF0aW9u",
+        "tags": [
+          "Makeup",
+          "Foundation"
+        ],
+        "scrapedAt": "2025-07-27T03:08:49.317Z"
+      }
+    },
+    "array19": {
+      "urls": [
+        "https://www.jomashop.com/benefit-ladies-gimme-brow-volumizing-fiber-gel-gel-shade-5-makeup-602004103130.html",
+        "https://www.jomashop.com/benefit-ladies-gimme-brow-volumizing-fiber-gel-gel-shade-4-5-makeup-602004095374.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Gel"
+      ],
+      "summary": {
+        "productCount": 2,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Gel-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5HZWw",
+        "tags": [
+          "Makeup",
+          "Gel"
+        ],
+        "scrapedAt": "2025-07-27T03:09:14.702Z"
+      }
+    },
+    "array20": {
+      "urls": [
+        "https://www.jomashop.com/kylie-matte-liquid-lipstick-lip-liner-by-kylie-jenner-lip-kit-kylie-4064941006657.html",
+        "https://www.jomashop.com/kylie-cosmetics-ladies-matte-liquid-lipstick-lip-liner-lip-kit-snow-way-bae-gift-set-makeup-4064941006800.html",
+        "https://www.jomashop.com/kylie-cosmetics-ladies-matte-liquid-lipstick-lip-liner-autumn-gift-set-makeup-4064941006756.html",
+        "https://www.jomashop.com/kylie-cosmetics-ladies-matte-liquid-lipstick-lip-liner-hollyberry-gift-set-makeup-4064941006732.html",
+        "https://www.jomashop.com/kylie-cosmetics-ladies-matte-liquid-lipstick-lip-liner-sweater-weather-gift-set-makeup-4064941008682.html",
+        "https://www.jomashop.com/kylie-cosmetics-ladies-matte-liquid-lipstick-lip-liner-bare-gift-set-makeup-4064941008675.html",
+        "https://www.jomashop.com/lancome-ladies-idole-le-parfum-gift-set-makeup-3614274164176.html",
+        "https://www.jomashop.com/paris-hilton-ladies-lip-babe-gift-set-makeup-810131232054.html",
+        "https://www.jomashop.com/loose-setting-powder-translucent-by-laura-mercier-for-women-1-oz-powder-736150000316.html",
+        "https://www.jomashop.com/paris-hilton-ladies-steal-the-show-mascara-trio-gift-set-makeup-810131232108.html",
+        "https://www.jomashop.com/nyx-professional-makeup-ultimate-shadow-palette-warm-neutrals-0-32-oz-makeup-865479002357.html",
+        "https://www.jomashop.com/loreal-ladies-volume-million-lashes-mascara-gift-set-makeup-3061376215495.html",
+        "https://www.jomashop.com/lancome-ladies-teint-visionnaire-makeup-duo-spf-20-beige-cannelle-06-gift-set-makeup-3605532697819.html",
+        "https://www.jomashop.com/loreal-ladies-rouge-signature-matte-lipstick-set-gift-set-makeup-3660732534609.html",
+        "https://www.jomashop.com/paris-hilton-ladies-lipstick-goals-gift-set-makeup-810084318317.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-kit-pinky-gift-set-makeup-850027404028.html",
+        "https://www.jomashop.com/nyx-professional-makeup-modern-dreamer-shadow-palette-makeup-865479002418.html",
+        "https://www.jomashop.com/assorted-fragrances-beauty-care-cosm1-a.html",
+        "https://www.jomashop.com/benefit-ladies-icons-gift-set-sets-602004154323.html",
+        "https://www.jomashop.com/loreal-professional-ladies-paris-infaillible-les-macarons-matte-liquid-lipsticks-gift-set-sets-3660732523016.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-smoke-shadow-gift-set-makeup-746480217261.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-better-naked-gift-set-makeup-746480217254.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-kit-call-me-coral-gift-set-makeup-850027404073.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-kit-rodeo-drive-gift-set-makeup-850027404059.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-kit-delilah-gift-set-makeup-850027404943.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-iconic-eye-kit-gift-set-makeup-850027404516.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-kit-icon-legends-only-gift-set-makeup-860004396611.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-kit-birthday-suit-gift-set-makeup-860004396604.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-iconic-eye-kit-gift-set-makeup-850027404509.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-kit-sabine-gift-set-makeup-850027404455.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-kit-showstopper-gift-set-makeup-850027404615.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-kit-heidi-gift-set-makeup-850027404066.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-kit-sasha-gift-set-makeup-850027404080.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lipkit-no-apologies-gift-set-makeup-860004396628.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-iconic-eye-kit-gift-set-makeup-850027404523.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-kit-kiki-gift-set-makeup-850027404103.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-kit-amelia-gift-set-makeup-850027404608.html",
+        "https://www.jomashop.com/nyx-professional-makeup-ultimate-shadow-palette-warm-neutrals-makeup-865479002364.html",
+        "https://www.jomashop.com/nyx-professional-makeup-modern-dreamer-shadow-palette-makeup-865479002432.html",
+        "https://www.jomashop.com/nyx-professional-makeup-modern-dreamer-shadow-palette-makeup-865479002425.html",
+        "https://www.jomashop.com/nyx-professional-makeup-ultimate-shadow-palette-warm-neutrals-makeup-865479002371.html",
+        "https://www.jomashop.com/nyx-professional-makeup-ultimate-edit-petite-shadow-palette-brights-makeup-865479002388.html",
+        "https://www.jomashop.com/nyx-professional-makeup-ultimate-edit-petite-shadow-palette-brights-makeup-865479002401.html",
+        "https://www.jomashop.com/maybelline-volumexpress-pumped-up-colossal-mascara-214-glam-black-makeup-865479000687.html",
+        "https://www.jomashop.com/anastasia-beverly-hills-brow-wiz-chocolate-gift-set-makeup-810390034772.html",
+        "https://www.jomashop.com/anastasia-beverly-hills-brow-wiz-soft-brown-gift-set-makeup-810390034765.html",
+        "https://www.jomashop.com/beauty-bar-beauty-blender-2-original-pink-blenders-w-5oz-liquid-cleanser-makeup-851610005608.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Gift Set"
+      ],
+      "summary": {
+        "productCount": 47,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Gift-Set-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5HaWZ0JTIwU2V0",
+        "tags": [
+          "Makeup",
+          "Gift Set"
+        ],
+        "scrapedAt": "2025-07-27T03:09:40.718Z"
+      }
+    },
+    "array21": {
+      "urls": [
+        "https://www.jomashop.com/rimmel-london-ladies-glow-stick-highlighter-0-17-oz-no-004-treasure-makeup-3614229436372.html",
+        "https://www.jomashop.com/mineral-radiance-sunshine-by-youngblood-for-women-0-335-oz-highlighter-blush-696137060125.html",
+        "https://www.jomashop.com/ysl-cosmetics-ysltoeh15.html",
+        "https://www.jomashop.com/benefit-ladies-liquid-glow-highlighter-dew-la-la-0-85-oz-no-lumi-tan-deep-makeup-602004154231.html",
+        "https://www.jomashop.com/benefit-ladies-liquid-glow-highlighter-dew-la-la-0-85-oz-no-comet-deep-dark-makeup-602004154262.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Highlighter"
+      ],
+      "summary": {
+        "productCount": 5,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Highlighter-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5IaWdobGlnaHRlcg",
+        "tags": [
+          "Makeup",
+          "Highlighter"
+        ],
+        "scrapedAt": "2025-07-27T03:10:06.233Z"
+      }
+    },
+    "array22": {
+      "urls": [
+        "https://www.jomashop.com/guerlain-noir-g-leyeliner-graphique-liner-hight-precision-eyeliner-pen-0-01-oz-01-black-makeup-3346470440913.html",
+        "https://www.jomashop.com/guerlain-ladies-the-eye-pencil-0-012-oz-01-black-ebony-makeup-3346470436589.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Liner"
+      ],
+      "summary": {
+        "productCount": 2,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Liner-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5MaW5lcg",
+        "tags": [
+          "Makeup",
+          "Liner"
+        ],
+        "scrapedAt": "2025-07-27T03:10:31.748Z"
+      }
+    },
+    "array23": {
+      "urls": [
+        "https://www.jomashop.com/armani-ladies-ecstasy-lacquer-excess-lipcolor-shine-506-maharajah-0-2-oz-lip-gloss-makeup-3614270651502.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-gloss-frost-bite-makeup-850027404660.html",
+        "https://www.jomashop.com/christian-dior-unisex-dior-addict-lip-glow-oil-oil-0-2-oz-004-coral-makeup-3348901491211-590415185.html",
+        "https://www.jomashop.com/benefit-ladies-plush-tint-moisturizing-matte-lip-tint-0-2-oz-no-26-quilty-pleasure-rosewood-fragrances-602004149282.html",
+        "https://www.jomashop.com/benefit-ladies-plush-tint-moisturizing-matte-lip-tint-0-2-oz-no-12-purrr-soft-fig-fragrances-602004149138.html",
+        "https://www.jomashop.com/benefit-ladies-splash-tint-moisturizing-dewy-lip-tint-0-2-oz-no-1-skinny-dip-soft-peach-makeup-602004148360.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-plumping-gloss-rebel-makeup-850027405421.html",
+        "https://www.jomashop.com/color-magic-ladies-lip-gloss-0-21-oz-hot-flame-makeup-895589400040.html",
+        "https://www.jomashop.com/giorgio-armani-ladies-lip-maestro-intense-velvet-lip-gloss-505-eccentric-makeup-3614271356956.html",
+        "https://www.jomashop.com/julep-cosmetics-juitwhlg5.html",
+        "https://www.jomashop.com/benefit-ladies-splash-tint-moisturizing-dewy-lip-tint-0-2-oz-no-7-tutti-frutti-fuchsia-pink-makeup-602004148247.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-plumping-gloss-so-heavy-crown-makeup-850027405438.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-gloss-go-lip-gloss-if-looks-could-kill-makeup-850027404332.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-gloss-go-lip-gloss-glow-up-makeup-850027404349.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-plumping-gloss-no-filter-makeup-850027405414.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-gloss-go-lip-gloss-frost-bite-makeup-850027404318.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-gloss-go-lip-gloss-rebel-makeup-850027404271.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-gloss-go-lip-gloss-pretty-please-makeup-850027404295.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-gloss-go-lip-gloss-no-filter-makeup-850027404264.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-plumping-gloss-all-that-glitters-makeup-850027404776.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-plumping-gloss-jet-setter-makeup-850027404738.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-gloss-if-looks-could-kill-makeup-850027404714.html",
+        "https://www.jomashop.com/color-magic-ladies-lip-gloss-0-21-oz-cinnamon-smile-makeup-895589400057.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-gloss-shake-it-makeup-850027404158.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-gloss-rebel-makeup-850027404479.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-gloss-no-filter-true-makeup-860004396666.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-plumping-gloss-lifes-a-peach-makeup-850027404769.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-gloss-pretty-please-makeup-850027404707.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-plumping-gloss-attention-seeker-makeup-850027404752.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-plumping-gloss-purple-pucker-makeup-850027404745.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-gloss-not-so-heavy-crown-makeup-850027404141.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-gloss-hustle-makeup-850027404165.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-gloss-dancing-queen-makeup-860004396673.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lip-plumping-gloss-creamy-dreamy-makeup-850027404783.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-gloss-firecracker-makeup-850027404721.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-gloss-guilty-pleasure-makeup-860004396680.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Lip Gloss"
+      ],
+      "summary": {
+        "productCount": 36,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Lip-Gloss-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5MaXAlMjBHbG9zcw",
+        "tags": [
+          "Makeup",
+          "Lip Gloss"
+        ],
+        "scrapedAt": "2025-07-27T03:10:57.246Z"
+      }
+    },
+    "array24": {
+      "urls": [
+        "https://www.jomashop.com/nars-precision-lip-liner-cap-dail-04-oz-607845090755.html",
+        "https://www.jomashop.com/nars-precision-lip-liner-mariachi-04-oz-narsllp48-q-607845090816.html",
+        "https://www.jomashop.com/nars-unisex-precision-lip-liner-0-04-oz-halong-bay-tan-rose-makeup-607845090717.html",
+        "https://www.jomashop.com/lipstick-queen-visible-lip-liner-deep-peony-0-35g-0-012oz-812599030647.html",
+        "https://www.jomashop.com/lipstick-queen-visible-lip-liner-vibrant-pink-0-35g-0-012oz-812599030654.html",
+        "https://www.jomashop.com/nars-precision-lip-liner-jungle-red-1-1g-0-04oz-607845090809.html",
+        "https://www.jomashop.com/precision-lip-liner-arles-by-nars-for-women-0-04-oz-lip-liner-607845090830.html",
+        "https://www.jomashop.com/nars-precision-lip-liner-holy-red-04-oz-narsllp52-q.html",
+        "https://www.jomashop.com/nars-precision-lip-liner-spunk-04-oz-narsllp51-q.html",
+        "https://www.jomashop.com/estee-lauder-makeup-eldowelp9-q.html",
+        "https://www.jomashop.com/olivia-palermo-ladies-lip-balm-clearly-op-makeup-840133700022.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Lipliner"
+      ],
+      "summary": {
+        "productCount": 11,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Lipliner-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5MaXBsaW5lcg",
+        "tags": [
+          "Makeup",
+          "Lipliner"
+        ],
+        "scrapedAt": "2025-07-27T03:11:22.679Z"
+      }
+    },
+    "array25": {
+      "urls": [
+        "https://www.jomashop.com/clinique-cosmetics-cqalmsls1.html",
+        "https://www.jomashop.com/clinique-ladies-almost-06-oz-44-pink-honey-makeup-0-20714782702-020714782702.html",
+        "https://www.jomashop.com/giorgio-armani-ladies-lip-maestro-intense-velvet-color-206-cedar-stick-0-22-oz-lipstick-makeup-3614272742574.html",
+        "https://www.jomashop.com/rms-beauty-ladies-tinted-daily-lip-balm-0-1-oz-crimson-lane-makeup-816248022885.html",
+        "https://www.jomashop.com/yves-saint-laurent-ladies-rouge-pur-couture-lipstick-23-makeup-3614272140127-590023096.html",
+        "https://www.jomashop.com/giorgio-armani-ladies-lip-magnet-second-skin-intense-matte-color-0-13-oz-005-vivacita-makeup-3614272980105.html",
+        "https://www.jomashop.com/meet-matte-hughes-long-lasting-liquid-lipstick-sincere-by-the-balm-for-women-0-25-oz-lip-gloss-681619807237.html",
+        "https://www.jomashop.com/the-balm-meet-matt-e-liquid-lipstick-charming-0-25-oz-681619805165.html",
+        "https://www.jomashop.com/the-balm-meet-matt-e-liquid-lipstick-committed-0-25-oz-balmmtlls3-681619805110.html",
+        "https://www.jomashop.com/estee-lauder-pure-color-envy-sculpting-lipstick-554-deep-secret-0-12-oz-887167498068.html",
+        "https://www.jomashop.com/clinique-even-better-pop-lipstick-05-camellia-0-13-oz-3-9-ml-192333012321.html",
+        "https://www.jomashop.com/mac-powder-kiss-lipstick-928-sheer-outrage-3g-0-1oz-773602588770.html",
+        "https://www.jomashop.com/mac-cosmetics-powder-kiss-lipstick-lasting-passion-0-1-oz-3-ml-773602522064.html",
+        "https://www.jomashop.com/benefit-ladies-floratint-lip-cheek-stain-0-2-oz-makeup-602004140128.html",
+        "https://www.jomashop.com/mac-powder-kiss-lipstick-929-youre-buggin-lady-3g-0-1oz-773602588787.html",
+        "https://www.jomashop.com/nars-ladies-afterglow-sensual-shine-lipstick-0-05-oz-217-truth-or-dare-makeup-194251133706.html",
+        "https://www.jomashop.com/estee-lauder-ladies-pure-color-envy-sculpting-lipstick-0-12-oz-561-intense-nude-makeup-887167615113.html",
+        "https://www.jomashop.com/mac-cosmetics-makeup-maccls74-0-10oz.html",
+        "https://www.jomashop.com/clinique-cosmetics-cqpopls6.html",
+        "https://www.jomashop.com/clinique-cosmetics-cqpopls5.html",
+        "https://www.jomashop.com/urban-decay-ladies-vice-high-impact-vegan-lipstick-0-11-oz-liar-cream-makeup-3605972494757.html",
+        "https://www.jomashop.com/urban-decay-ladies-vice-0-11-oz-backtalk-matte-makeup-3605972495679.html",
+        "https://www.jomashop.com/kylie-cosmetics-ladies-matte-liquid-lipstick-lip-liner-boss-makeup-4064941008583.html",
+        "https://www.jomashop.com/christian-dior-addict-lip-maximizer-gloss-007-raspberry-6ml-0-2oz-3348901636056.html",
+        "https://www.jomashop.com/christian-dior-ladies-dior-addict-lip-glow-colour-reviving-lip-balm-0-11-oz-061-poppy-coral-makeup-3348901711562.html",
+        "https://www.jomashop.com/elizabeth-arden-ladies-0-13-oz-01-petal-pink-fragrances-085805233266.html",
+        "https://www.jomashop.com/estee-lauder-unisex-pure-color-envy-color-replenish-lip-balm-0-11-oz-makeup-887167443471.html",
+        "https://www.jomashop.com/christian-dior-ladies-rouge-dior-floral-care-refillable-lip-balm-refill-0-12-oz-525-cherie-satin-balm-makeup-3348901585569.html",
+        "https://www.jomashop.com/estee-lauder-pure-color-envy-kissable-lip-shine-106-tempt-tease-5-8ml-0-2oz-887167482500.html",
+        "https://www.jomashop.com/tom-ford-lip-color-matte-40-fetishist-3g-0-1oz-888066072243.html",
+        "https://www.jomashop.com/giorgio-armani-ladies-lip-maestro-415-redwood-liquid-0-22-oz-lipstick-makeup-3614272742598.html",
+        "https://www.jomashop.com/elizabeth-arden-ladies-matte-lipstick-0-13-oz-06-more-mulberry-fragrances-085805247331.html",
+        "https://www.jomashop.com/y-a3v2c.html",
+        "https://www.jomashop.com/christian-dior-ladies-dior-addict-lip-tint-0-16-oz-541-natural-sienna-makeup-3348901601467.html",
+        "https://www.jomashop.com/mally-h3-lipstick-gel-poppie-0-12-oz-mlh3lsg5.html",
+        "https://www.jomashop.com/estee-lauder-pure-color-envy-velvet-matte-sculpting-lipstick-887167498020.html",
+        "https://www.jomashop.com/giorgio-armani-ladies-lip-maestro-liquid-lipstick-0-22-oz-300-flesh-makeup-3605521648716.html",
+        "https://www.jomashop.com/clinique-cosmetics-cqpopmls23.html",
+        "https://www.jomashop.com/elizabeth-arden-ladies-matte-lipstick-0-13-oz-07-legendary-red-fragrances-085805247348.html",
+        "https://www.jomashop.com/nars-ladies-explicit-satin-lipstick-0-13-oz-unauthorized-makeup-194251144610.html",
+        "https://www.jomashop.com/nars-ladies-afterglow-lipstick-0-5-oz-breathless-makeup-194251133652.html",
+        "https://www.jomashop.com/guerlain-ladies-rogue-g-luxurious-velvet-metal-lipstick-no-214-exotic-red-makeup-3346470437005.html",
+        "https://www.jomashop.com/dior-rouge-dior-couture-colour-velvet-satin-finishes-lipstick-0-12-oz-777-fahrenheit-velvet-finish-makeup-3348901677158.html",
+        "https://www.jomashop.com/christian-dior-ladies-addict-lip-maximizer-gloss-0-2-oz-009-intense-rosewood-makeup-3348901636070.html",
+        "https://www.jomashop.com/nars-ladies-afterglow-lip-shine-0-17-oz-lover-to-lover-makeup-194251077239.html",
+        "https://www.jomashop.com/nars-ladies-afterglow-lip-shine-0-17-oz-nympho-makeup-194251077208.html",
+        "https://www.jomashop.com/nars-ladies-afterglow-lip-shine-0-17-oz-aragon-makeup-194251077215.html",
+        "https://www.jomashop.com/burberry-burberry-kisses-lip-lacquer-no-no-26-bright-coral-5-5ml-0-18oz-3614229143089.html",
+        "https://www.jomashop.com/burberry-ladies-burberry-kisses-lip-lacquer-0-18-oz-no-35-tangerine-red-makeup-3614229143386.html",
+        "https://www.jomashop.com/nars-ladies-air-matte-lip-color-0-24-oz-gipsy-makeup-194251130736.html",
+        "https://www.jomashop.com/nars-ladies-afterglow-lip-balm-0-1-oz-torrid-makeup-607845013594.html",
+        "https://www.jomashop.com/nars-unisex-powermatte-lip-pigment-0-18-oz-vain-brick-red-makeup-607845027867.html",
+        "https://www.jomashop.com/nars-powermatte-lip-pigment-rock-with-you-deep-mulberry-5-5ml-0-18oz-607845027744.html",
+        "https://www.jomashop.com/paint-wash-liquid-lip-colour-red-brick-by-laura-mercier-for-women-0-2-oz-lipstick-736150130426.html",
+        "https://www.jomashop.com/always-on-liquid-lipstick-stepping-out-by-smashbox-for-women-0-13-oz-lipstick-607710050846.html",
+        "https://www.jomashop.com/always-on-liquid-lipstick-bawse-by-smashbox-for-women-0-13-oz-lipstick-607710050983.html",
+        "https://www.jomashop.com/always-on-liquid-lipstick-fair-game-by-smashbox-for-women-0-13-oz-lipstick-607710066717.html",
+        "https://www.jomashop.com/always-on-liquid-lipstick-babe-alert-by-smashbox-for-women-0-13-oz-lipstick-607710050891.html",
+        "https://www.jomashop.com/always-on-liquid-lipstick-big-spender-by-smashbox-for-women-0-13-oz-lipstick-607710050884.html",
+        "https://www.jomashop.com/rear-view-mirror-lip-lacquer-berry-tacoma-by-lipstick-queen-for-women-0-04-oz-lipstick-812599030180.html",
+        "https://www.jomashop.com/armani-ladies-lip-maestro-intense-velvet-color-503-red-fuchsia-stick-0-22-oz-lipstick-makeup-3605521677150-l3794300.html",
+        "https://www.jomashop.com/urban-decay-ladies-vice-afterdark-stick-0-11-oz-lipstick-makeup-3605971155475-s2168800.html",
+        "https://www.jomashop.com/shiseido-colorgel-lipbalm-0-07-oz-color-104-hibicus-sheer-warm-pink-729238148932.html",
+        "https://www.jomashop.com/giorgio-armani-ecstasy-shine-excess-shine-care-lipcolor-502-drama-3614271432933.html",
+        "https://www.jomashop.com/clinique-makeup-cqpopmls21.html",
+        "https://www.jomashop.com/estee-lauder-makeup-elpucels20-q.html",
+        "https://www.jomashop.com/nars-cosmetics-narsaudls1.html",
+        "https://www.jomashop.com/glamglow-cosmetics-gglpmpls3.html",
+        "https://www.jomashop.com/estee-lauder-elpucels16.html",
+        "https://www.jomashop.com/glamglow-cosmetics-gglpmpls8.html",
+        "https://www.jomashop.com/glamglow-cosmetics-gglpmpls6.html",
+        "https://www.jomashop.com/glamglow-cosmetics-gglpmpls2.html",
+        "https://www.jomashop.com/nina-ricci-ladies-monsters-jumbo-lipstick-0-009-oz-matte-tempting-coral-makeup-3137370341888.html",
+        "https://www.jomashop.com/rimmel-london-ladies-lasting-provocalips-0-056-oz-no-220-come-up-roses-makeup-3616302737864.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lipstick-rosee-all-day-makeup-860004396642.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-enhancer-big-stick-energy-makeup-850027404387.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lipstick-mrs-hamlin-makeup-850027404202.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lipstick-pucker-up-b-tch-makeup-860004396659.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lipstick-heart-throb-makeup-850027404462.html",
+        "https://www.jomashop.com/olivia-palermo-ladies-matte-lipstick-poppy-makeup-840133700015.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lipstick-troublemaker-makeup-860004396635.html",
+        "https://www.jomashop.com/olivia-palermo-ladies-lip-balm-lychee-makeup-840133700039.html",
+        "https://www.jomashop.com/olivia-palermo-ladies-true-matte-lipstick-runway-rouge-makeup-840133700053.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-icon-lip-stick-slay-all-day-makeup-850027404035.html",
+        "https://www.jomashop.com/olivia-palermo-ladies-matte-lipstick-santa-fe-makeup-840133717761.html",
+        "https://www.jomashop.com/olivia-palermo-ladies-matte-lipstick-chianti-makeup-840133717754.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-lipstick-dirty-talk-makeup-850027404196.html",
+        "https://www.jomashop.com/elizabeth-arden-ladies-matte-lipstick-0-13-oz-02-embrace-pink-fragrances-085805247287.html",
+        "https://www.jomashop.com/elizabeth-arden-ladies-0-13-oz-16-rich-merlot-fragrances-085805233419.html",
+        "https://www.jomashop.com/nars-ladies-afterglow-0-5-oz-show-off-makeup-194251133744.html",
+        "https://www.jomashop.com/dior-rouge-dior-couture-colour-velvet-satin-finishes-lipstick-0-12-oz-100-nude-look-velvet-finish-makeup-3348901658409.html",
+        "https://www.jomashop.com/dior-rouge-dior-couture-colour-velvet-satin-finishes-lipstick-0-12-oz-200-nude-touch-makeup-3348901689434.html",
+        "https://www.jomashop.com/nars-ladies-powermatte-lipstick-0-05-oz-115-thunder-kiss-makeup-194251133553.html",
+        "https://www.jomashop.com/christian-dior-ladies-addict-lip-maximizer-gloss-0-2-oz-037-intense-rose-makeup-3348901650229.html",
+        "https://www.jomashop.com/giorgio-armani-ladies-lip-power-longwear-vivid-color-lipstick-0-11-oz-404-tempting-makeup-3614272649286.html",
+        "https://www.jomashop.com/giorgio-armani-ladies-lip-power-longwear-vivid-color-lipstick-0-11-oz-504-flirt-makeup-3614272649255.html",
+        "https://www.jomashop.com/giorgio-armani-ladies-lip-power-longwear-vivid-color-lipstick-0-11-oz-503-eccentrico-makeup-3614272649378.html",
+        "https://www.jomashop.com/armani-lip-power-matte-longwear-caring-intense-matte-lipstick-0-11-oz-603-dramatic-makeup-3614273831253.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Lipstick"
+      ],
+      "summary": {
+        "productCount": 98,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Lipstick-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5MaXBzdGljaw",
+        "tags": [
+          "Makeup",
+          "Lipstick"
+        ],
+        "scrapedAt": "2025-07-27T03:12:08.478Z"
+      }
+    },
+    "array26": {
+      "urls": [
+        "https://www.jomashop.com/nars-radiant-creamy-concealer-biscuit-0-22-oz-6-ml-narscncr22-607845012368.html",
+        "https://www.jomashop.com/nars-radiant-creamy-concealer-caramel-0-22-oz-6-ml-narscncr17-607845012375.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Lotions & Creams"
+      ],
+      "summary": {
+        "productCount": 2,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Lotions-And-Creams-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5Mb3Rpb25zJTIwJTI2JTIwQ3JlYW1z",
+        "tags": [
+          "Makeup",
+          "Lotions & Creams"
+        ],
+        "scrapedAt": "2025-07-27T03:12:33.841Z"
+      }
+    },
+    "array27": {
+      "urls": [
+        "https://www.jomashop.com/all-gone-eye-lip-makeup-remover-by-elizabeth-arden-for-women-3-4-oz-makeup-remover-85805190903.html",
+        "https://www.jomashop.com/herbal-eye-make-up-remover-by-eminence-for-unisex-5-07-oz-make-up-remover-823638005458.html",
+        "https://www.jomashop.com/clinique-perfume-cqttdocl2.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Makeup Remover"
+      ],
+      "summary": {
+        "productCount": 3,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Makeup-Remover-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5NYWtldXAlMjBSZW1vdmVy",
+        "tags": [
+          "Makeup",
+          "Makeup Remover"
+        ],
+        "scrapedAt": "2025-07-27T03:12:59.257Z"
+      }
+    },
+    "array28": {
+      "urls": [
+        "https://www.jomashop.com/estee-lauder-cosmetics-eldowema1.html",
+        "https://www.jomashop.com/estee-lauder-perfume-elsuexma3.html",
+        "https://www.jomashop.com/clinique-cosmetics-cqhiimma7.html",
+        "https://www.jomashop.com/clinique-chubby-lash-fattening-mascara-0-4-oz-jumbo-jet-makeup-192333100998.html",
+        "https://www.jomashop.com/clinique-ladies-high-impact-0-28-oz-black-brown-makeup-020714192341.html",
+        "https://www.jomashop.com/clinique-lash-power-mascara-01-black-onyx-0-21-oz-020714979089.html",
+        "https://www.jomashop.com/estee-lauder-turbo-lash-high-powered-volume-length-mascara-27-oz-01-black-makeup-887167582873.html",
+        "https://www.jomashop.com/maybelline-ladies-lash-sensational-sky-high-0-24-oz-801-very-black-makeup-0-41554590500-041554590500.html",
+        "https://www.jomashop.com/elizabeth-arden-makeup-eastovma1-0-29oz.html",
+        "https://www.jomashop.com/maybelline-ladies-lash-sensational-0-32-oz-01-very-black-makeup-3600531143459.html",
+        "https://www.jomashop.com/elizabeth-arden-makeup-eamaw1-0-3oz.html",
+        "https://www.jomashop.com/elizabeth-arden-makeup-eama1-0-3oz.html",
+        "https://www.jomashop.com/benefit-ladies-theyre-real-magnet-powerful-lifting-lengthening-mascara-0-32-oz-supercharged-black-makeup-602004123909.html",
+        "https://www.jomashop.com/the-colossal-volum-express-waterproof-mascara-241-classic-black-by-maybelline-for-women-0-27-oz-mascara-41554197044.html",
+        "https://www.jomashop.com/the-colossal-volum-express-waterproof-mascara-240-glam-black-by-maybelline-for-women-0-27-oz-mascara-41554197037.html",
+        "https://www.jomashop.com/the-colossal-volum-express-mascara-231-classic-black-by-maybelline-for-women-0-31-oz-mascara-41554050905.html",
+        "https://www.jomashop.com/the-colossal-volum-express-mascara-230-glam-black-by-maybelline-for-women-0-31-oz-mascara-41554050899.html",
+        "https://www.jomashop.com/dior-ladies-diorshow-iconic-overcurl-spectacular-volume-curl-professional-mascara-0-33-oz-shade-090-makeup-3348901141284.html",
+        "https://www.jomashop.com/benefit-ladies-they-re-real-magnet-mascara-0-16-oz-supercharged-black-makeup-602004124067.html",
+        "https://www.jomashop.com/benefit-ladies-badgal-bang-waterproof-volumizing-mascara-0-3-oz-intense-pitch-black-makeup-602004132208.html",
+        "https://www.jomashop.com/nutraluxe-md-ladies-md-mascara-lash-enhancer-0-2-oz-makeup-856042000849.html",
+        "https://www.jomashop.com/urban-decay-ladies-perversion-mascara-makeup-604214922600.html",
+        "https://www.jomashop.com/clinique-makeup-cqhiimma1.html",
+        "https://www.jomashop.com/lancome-cosmetics-lnhynma1-a.html",
+        "https://www.jomashop.com/rinna-beauty-ladies-iconic-eyes-mascara-lashout-black-makeup-850027404530.html",
+        "https://www.jomashop.com/maybelline-volumexpress-pumped-up-colossal-mascara-214-glam-black-makeup-865479000688.html",
+        "https://www.jomashop.com/clarins-ladies-my-clarins-my-black-mascara-0-1-oz-01-black-makeup-3666057006791.html",
+        "https://www.jomashop.com/lancome-ladies-monsieur-big-mascara-big-is-the-new-black-0-33-oz-makeup-3614271682369.html",
+        "https://www.jomashop.com/lancome-monsieur-big-waterproof-mascara-3614271774712.html",
+        "https://www.jomashop.com/great-lash-waterproof-mascara-111-very-black-by-maybelline-for-women-0-43-oz-mascara-41554626964-0041554626964.html",
+        "https://www.jomashop.com/volum-express-pumped-up-colossal-washable-mascara-glam-black-by-maybelline-for-women-0-33-mascara-41554409291-0041554409291.html",
+        "https://www.jomashop.com/lancome-cosmetics-lnhyndma1.html",
+        "https://www.jomashop.com/lancome-lndefima1-a.html",
+        "https://www.jomashop.com/lancome-cosmetics-lnhydlma1b.html",
+        "https://www.jomashop.com/clinique-perfume-cqhiimmaw1.html",
+        "https://www.jomashop.com/rimmel-london-ladies-wonder-volume-thrill-seeker-mascara-0-27-oz-extreme-black-makeup-3616303997731.html",
+        "https://www.jomashop.com/wunderbrow-ladies-wunderbrow-volumizing-mascara-0-34-oz-black-makeup-5056153514449.html",
+        "https://www.jomashop.com/maybelline-great-lash-mascara-waterproof-111-very-black-makeup-865479000685.html",
+        "https://www.jomashop.com/maybelline-volumexpress-the-colossal-big-shot-mascara-very-black-makeup-865479000927.html",
+        "https://www.jomashop.com/maybelline-volumexpress-the-colossal-big-shot-mascara-very-black-makeup-865479000928.html",
+        "https://www.jomashop.com/maybelline-the-colossal-go-extreme-mascara-very-black-makeup-865479001010.html",
+        "https://www.jomashop.com/maybelline-volumexpress-the-colossal-go-extreme-mascara-leather-black-makeup-865479000926.html",
+        "https://www.jomashop.com/maybelline-the-colossal-go-extreme-mascara-very-black-makeup-865479001011.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Mascara"
+      ],
+      "summary": {
+        "productCount": 43,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Mascara-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5NYXNjYXJh",
+        "tags": [
+          "Makeup",
+          "Mascara"
+        ],
+        "scrapedAt": "2025-07-27T03:13:24.641Z"
+      }
+    },
+    "array29": {
+      "urls": [
+        "https://www.jomashop.com/guess-ladies-love-romance-blush-8-5-oz-mist-085715326911.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Mist"
+      ],
+      "summary": {
+        "productCount": 1,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Mist-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5NaXN0",
+        "tags": [
+          "Makeup",
+          "Mist"
+        ],
+        "scrapedAt": "2025-07-27T03:13:50.038Z"
+      }
+    },
+    "array30": {
+      "urls": [
+        "https://www.jomashop.com/elizabeth-arden-ladies-flawless-finish-mousse-makeup-terra-1-7-oz-skin-care-0-85805126179-085805126179.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Moisturizer"
+      ],
+      "summary": {
+        "productCount": 1,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Moisturizer-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5Nb2lzdHVyaXplcg",
+        "tags": [
+          "Makeup",
+          "Moisturizer"
+        ],
+        "scrapedAt": "2025-07-27T03:14:15.456Z"
+      }
+    },
+    "array31": {
+      "urls": [
+        "https://www.jomashop.com/benefit-ladies-hubba-brow-enhancing-serum-0-15-oz-fragrances-602004148803.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Oil & Serums"
+      ],
+      "summary": {
+        "productCount": 1,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Oil-And-Serums-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5PaWwlMjAlMjYlMjBTZXJ1bXM",
+        "tags": [
+          "Makeup",
+          "Oil & Serums"
+        ],
+        "scrapedAt": "2025-07-27T03:14:41.369Z"
+      }
+    },
+    "array32": {
+      "urls": [
+        "https://www.jomashop.com/buxom-unisex-xtrovert-eyeshadow-palette-makeup-194249000386.html",
+        "https://www.jomashop.com/urban-decay-ladies-stoned-vibes-major-gems-set-makeup-3605972389510.html",
+        "https://www.jomashop.com/nyx-ultimate-shadow-palette-16x-eye-shadow-warm-neutrals-16x0-83g-0-02oz-800897017644.html",
+        "https://www.jomashop.com/nyx-professional-makeup-modern-dreamer-shadow-palette-makeup-800897191528.html",
+        "https://www.jomashop.com/christian-dior-backstage-glow-face-palette-highlight-blush-0-35-oz-003-pure-gold-makeup-3348901530866.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Palettes"
+      ],
+      "summary": {
+        "productCount": 5,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Palettes-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5QYWxldHRlcw",
+        "tags": [
+          "Makeup",
+          "Palettes"
+        ],
+        "scrapedAt": "2025-07-27T03:15:07.274Z"
+      }
+    },
+    "array33": {
+      "urls": [
+        "https://www.jomashop.com/nail-lacquer-nl-f15-you-dont-know-jacques-by-opi-for-women-0-5-oz-nail-polish-9474110.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-0-5-oz-lisbon-wants-moor-nails-619828136466.html",
+        "https://www.jomashop.com/opi-ladies-nail-lacquer-0-5-alpine-snow-nails-00000-9403918-000009403918.html",
+        "https://www.jomashop.com/opi-ladies-nail-lacquer-0-5-oz-put-it-in-neutral-nails-0000-09454019-000009454019.html",
+        "https://www.jomashop.com/opi-ladies-nail-lacquer-0-5-oz-tickle-my-france-y-nails-0000-09447310-000009447310.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-0-5-oz-alpine-snow-nails-619828090027.html",
+        "https://www.jomashop.com/nail-lacquer-nl-sh1-baby-take-a-vow-by-opi-for-women-0-5-oz-nail-polish-3614228115094.html",
+        "https://www.jomashop.com/gelcolor-sh4-bare-my-soul-by-opi-for-women-0-5-oz-nail-polish-3614228122061.html",
+        "https://www.jomashop.com/opi-nail-lacquer-color-cajun-shrimp-09405411.html",
+        "https://www.jomashop.com/opi-ladies-nail-lacquer-liquid-0-5-oz-nail-polish-color-princesses-rule-09485718.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-gel-0-5-oz-stay-classic-nails-3616300769997.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-0-5-oz-tiramisu-for-two-nails-619828116680.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-0-5-oz-lincoln-park-after-dark-nails-619828090607.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-0-5-oz-mod-about-you-nails-619828100832.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-0-5-oz-its-a-boy-nails-619828123473.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-0-5-oz-tickle-my-france-y-nails-619828131041.html",
+        "https://www.jomashop.com/opi-ladies-nail-lacquer-0-5-oz-black-onyx-nails-0000-09470415-000009470415.html",
+        "https://www.jomashop.com/opi-ladies-nail-lacquer-0-5-oz-taupe-less-beach-nails-0000-09413012-000009413012.html",
+        "https://www.jomashop.com/opi-ladies-nail-lacquer-0-5-oz-movie-buff-nails-3616301710943.html",
+        "https://www.jomashop.com/opi-ladies-nail-lacquer-0-5-oz-funny-bunny-nails-00000-09419113-0000009419113.html",
+        "https://www.jomashop.com/opi-ladies-nail-lacquer-0-5-oz-malaga-wine-nails-0000-09405819-000009405819.html",
+        "https://www.jomashop.com/opi-ladies-nail-lacquer-0-5-oz-its-a-girl-nails-0000-09435519-000009435519.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-0-5-oz-malaga-wine-nails-619828090058.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-0-5-oz-put-it-in-neutral-nails-619828114723.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-0-5-oz-its-a-girl-nails-619828100283.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-0-5-oz-do-you-take-lei-away-nails-619828113016.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-0-5-oz-black-onyx-nails-619828090409.html",
+        "https://www.jomashop.com/opi-ladies-gel-nail-polish-0-5-oz-dont-bossa-nova-me-around-nails-619828101723.html",
+        "https://www.jomashop.com/artmatic-cosmetics-armerenp1.html",
+        "https://www.jomashop.com/opi-ladies-infinite-shine-2-0-5-oz-nail-polish-alpaca-my-bags-nails-0619828139740.html",
+        "https://www.jomashop.com/nars-cosmetics-narsnp57.html",
+        "https://www.jomashop.com/opi-ladies-nail-lacquer-0-5-oz-im-so-swamped-nails-0094100006154.html",
+        "https://www.jomashop.com/opi-ladies-infinite-shine-nail-polish-0-5-oz-gloss-nails-0794437242873.html",
+        "https://www.jomashop.com/opi-ladies-nail-lacquer-0-5-oz-pop-the-baubles-nails-4064665100068.html",
+        "https://www.jomashop.com/bourjois-paris-ladies-healthy-mix-0-3-oz-nail-polish-no-350-wine-only-makeup-3616303185770.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Polish"
+      ],
+      "summary": {
+        "productCount": 35,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Polish-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5Qb2xpc2g",
+        "tags": [
+          "Makeup",
+          "Polish"
+        ],
+        "scrapedAt": "2025-07-27T03:15:32.719Z"
+      }
+    },
+    "array34": {
+      "urls": [
+        "https://www.jomashop.com/victoria-secret-ladies-lips-like-sugar-0-5-oz-makeup-667547534681.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Scrubs, Foams & Exfoliants"
+      ],
+      "summary": {
+        "productCount": 1,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Scrubs-Foams-And-Exfoliants-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5TY3J1YnMlMkMlMjBGb2FtcyUyMCUyNiUyMEV4Zm9saWFudHM",
+        "tags": [
+          "Makeup",
+          "Scrubs, Foams & Exfoliants"
+        ],
+        "scrapedAt": "2025-07-27T03:15:58.153Z"
+      }
+    },
+    "array35": {
+      "urls": [
+        "https://www.jomashop.com/matte-radiance-baked-powder-bronze-02-by-laura-mercier-for-women-0-26-oz-powder-736150109569.html",
+        "https://www.jomashop.com/smashbox-photo-finish-endurance-breathable-setting-spray-3-7-oz-makeup-607710006676.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Setting Sprays & Powders"
+      ],
+      "summary": {
+        "productCount": 2,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Setting-Sprays-And-Powders-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5TZXR0aW5nJTIwU3ByYXlzJTIwJTI2JTIwUG93ZGVycw",
+        "tags": [
+          "Makeup",
+          "Setting Sprays & Powders"
+        ],
+        "scrapedAt": "2025-07-27T03:16:23.669Z"
+      }
+    },
+    "array36": {
+      "urls": [
+        "https://www.jomashop.com/christian-dior-ladies-dior-backstage-concealer-brush-13-makeup-3348901379144.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Styling Tools"
+      ],
+      "summary": {
+        "productCount": 1,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Styling-Tools-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5TdHlsaW5nJTIwVG9vbHM",
+        "tags": [
+          "Makeup",
+          "Styling Tools"
+        ],
+        "scrapedAt": "2025-07-27T03:16:49.632Z"
+      }
+    },
+    "array37": {
+      "urls": [
+        "https://www.jomashop.com/smashbox-unisex-halo-healthy-glow-all-in-one-tinted-moisturizer-spf-25-1-4-oz-light-medium-makeup-607710089648.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Tinted Moisturizers"
+      ],
+      "summary": {
+        "productCount": 1,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Tinted-Moisturizers-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5UaW50ZWQlMjBNb2lzdHVyaXplcnM",
+        "tags": [
+          "Makeup",
+          "Tinted Moisturizers"
+        ],
+        "scrapedAt": "2025-07-27T03:17:15.181Z"
+      }
+    },
+    "array38": {
+      "urls": [
+        "https://www.jomashop.com/bareminerals-makeup-barebr37.html",
+        "https://www.jomashop.com/purple-cosmetic-bag-vicky-tiel-603531000954.html",
+        "https://www.jomashop.com/shiseido-naname-fude-multi-eye-brush-729238146976.html",
+        "https://www.jomashop.com/mac-cosmetics-foundation-pump-773602124275.html",
+        "https://www.jomashop.com/nars-eye-lash-curler-607845018308.html",
+        "https://www.jomashop.com/nars-makeup-narsbr24-0-01oz.html",
+        "https://www.jomashop.com/bareminerals-cosmetics-barebr51.html",
+        "https://www.jomashop.com/nars-cosmetics-narsbr12.html",
+        "https://www.jomashop.com/bareminerals-cosmetics-barebr26.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Tools"
+      ],
+      "summary": {
+        "productCount": 9,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Tools-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5Ub29scw",
+        "tags": [
+          "Makeup",
+          "Tools"
+        ],
+        "scrapedAt": "2025-07-27T03:17:40.615Z"
+      }
+    },
+    "array39": {
+      "urls": [
+        "https://www.jomashop.com/geske-lip-volumizer-booster-4-in-1-tools-brushes-4099702003200.html",
+        "https://www.jomashop.com/geske-gray-lip-volumizer-booster-6-in-1-4099702003149.html",
+        "https://www.jomashop.com/geske-lip-volumizer-booster-4-in-1-tools-brushes-4099702003125.html"
+      ],
+      "extraTags": [
+        "Makeup",
+        "Tools & Care"
+      ],
+      "summary": {
+        "productCount": 3,
+        "sourceUrl": "https://www.jomashop.com/collections/makeup/Tools-And-Care-Makeup~YmVhdXR5X3Byb2R1Y3RfdHlwZX5Ub29scyUyMCUyNiUyMENhcmU",
+        "tags": [
+          "Makeup",
+          "Tools & Care"
+        ],
+        "scrapedAt": "2025-07-27T03:18:06.062Z"
+      }
+    }
+  },
+  "summary": {
+    "totalProducts": 592,
+    "totalArrays": 39,
+    "collectedAt": "2025-07-27T03:00:38.344Z",
+    "minDiscount": 0
+  }
+}
