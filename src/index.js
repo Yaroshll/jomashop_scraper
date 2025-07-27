@@ -1,34 +1,10 @@
 import { launchBrowser } from "./helpers/browser.js";
 import { scrapeProduct } from "./helpers/scraper.js";
 import { exportToExcel } from "./helpers/excel.js";
+import { loadInputFromJson } from "./helpers/loadInput.js";
 
 // Input object with URLs, tags, and gender per group
-const input = {
- "array1": {
-      urls: [
-        "https://www.jomashop.com/purple-cosmetic-bag-vicky-tiel-603531000954.html",
-        "https://www.jomashop.com/shiseido-naname-fude-multi-eye-brush-729238146976.html",
-        "https://www.jomashop.com/mac-cosmetics-foundation-pump-773602124275.html",
-        "https://www.jomashop.com/bareminerals-makeup-barebr37.html",
-        "https://www.jomashop.com/nars-eye-lash-curler-607845018308.html",
-        "https://www.jomashop.com/nars-makeup-narsbr24-0-01oz.html",
-        "https://www.jomashop.com/bareminerals-cosmetics-barebr51.html",
-        "https://www.jomashop.com/nars-cosmetics-narsbr12.html",
-        "https://www.jomashop.com/christian-dior-ladies-dior-backstage-concealer-brush-13-makeup-3348901379144.html",
-        "https://www.jomashop.com/bareminerals-cosmetics-barebr26.html"
-      ],
-      extraTags: [
-        "Makeup",
-        "women",
-        "Lips",
-        "Sponges ",
-        "Brushes",
-        "Lash Tools",
-        "Blotting Papers",
-        "Makeup Tools"
-      ]}
-};
-
+const input = await loadInputFromJson("URL_scraper_output");
 /**
  * Main scraping function
  */

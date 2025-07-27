@@ -56,11 +56,12 @@ function convertToShopifyFormat(rows) {
     const cost = parsePrice(row["Cost per item"]);
     const calculatedCost = (cost * 3.675).toFixed(2); // Apply cost multiplier
     const basePrice = calculatedCost * 1.3; // Add 30% markup
+    
     const min = 0.15;
     const max = 0.3;
     const randomPercent = min + Math.random() * (max - min);
     const compareAtPrice = Math.round(basePrice * (1 + randomPercent));
-    const variantPrice = Math.floor(basePrice); // Round down to whole number
+    const variantPrice = (Math.floor(basePrice) + 0.99).toFixed(2); // Round down to whole number
 
     /**
      * Normalizes gender values for Shopify
@@ -78,7 +79,7 @@ function convertToShopifyFormat(rows) {
     // Return Shopify-formatted product data
     return {
       Handle: row["Handle"],
-      Title: `${row["Brand Name"] || ""}, ${row["Title"] || ""}`.trim(),
+      Title:row["Title"],
       "Body (HTML)": row["Body (HTML)"],
       "Variant SKU": row["SKU"],
       "Variant Price": variantPrice,

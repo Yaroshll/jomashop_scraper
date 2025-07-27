@@ -93,14 +93,43 @@ export async function scrapeProduct(page, url, genderFallback = "") {
       const match = fullSku.match(/Item No\. (.+)/i);
       productData.sku = match ? match[1].trim() : fullSku;
     }
+  // Create slugified handle
+function cleanSlug(str) {
+  return (str || "")
+    .toString()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .replace(/-+/g, "-");
+}
 
-    if (titleEl) {
-      productData.title = (await titleEl.textContent())?.trim() || "";
-      productData.handle =
-        productData.title.replace(/\s+/g, "_").toLowerCase() +
-        "_" +
-        productData.sku;
-    }
+const rawBrand = productData.brandName || "";
+let rawTitle = "";
+
+if (titleEl) {
+  rawTitle = (await titleEl.textContent())?.trim() || "";
+  rawTitle = rawTitle.replace(/^\/+|\/+$/g, "").trim(); // remove leading/trailing slashes
+}
+
+productData.title = `${rawBrand}, ${rawTitle}`.trim();
+
+// Now clean them for handle
+const cleanTitle = cleanSlug(rawTitle);
+const cleanBrand = cleanSlug(rawBrand);
+const cleanSku = cleanSlug(productData.sku || "");
+
+// Generate handle
+productData.handle = `${cleanTitle}-${cleanBrand}-${cleanSku}`;
+
+
+
+    // if (titleEl) {
+    //   productData.title = (await titleEl.textContent())?.trim() || "";
+    //   productData.handle =
+    //     productData.title.replace(/\s+/g, "_").toLowerCase() +
+    //     "_" +
+    //     productData.sku;
+    // }
 
     // Extract SKU (Item Number)
 
