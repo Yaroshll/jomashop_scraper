@@ -19,7 +19,9 @@ async function main() {
 
       for (let i = 0; i < urls.length; i++) {
         const url = urls[i];
-        console.log(`(${groupName}) Scraping ${i + 1}/${urls.length} -- ${url}`);
+        console.log(
+          `(${groupName}) Scraping ${i + 1}/${urls.length} -- ${url}`
+        );
 
         const productData = await scrapeProduct(page, url, gender);
 
