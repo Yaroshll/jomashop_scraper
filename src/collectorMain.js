@@ -1,8 +1,8 @@
 import { collectProductUrls } from "./urlcollector.js";
 
 // Configuration - change these values as needed
-const TARGET_URL = "https://www.jomashop.com/watches.html?sort=saving%7Cdesc&p=830"; // Example: Philipp Plein category
-const MIN_DISCOUNT = 1; // Minimum discount percentage (set to 0 to ignore discounts)
+const TARGET_URL = "https://www.jomashop.com/watches.html?sort=saving%7Cdesc&p=450"; // Example: Philipp Plein category
+const MIN_DISCOUNT = 40; // Minimum discount percentage (set to 0 to ignore discounts)
 
 async function main() {
   try {
