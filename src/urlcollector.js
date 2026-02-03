@@ -16,6 +16,42 @@ export async function collectProductUrls(categoryUrl, minDiscount = 40) {
   let visited = new Set();
   let currentUrl = categoryUrl;
   let pageNumber = 1;
+  
+  // Create filename for this session
+  const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const sessionFilename = path.join(
+    "URL_scraper_output",
+    `jomashop_products_${timestamp}.json`
+  );
+  
+  // Create backup filename
+  const backupFilename = path.join(
+    "URL_scraper_output",
+    `jomashop_products_backup_${timestamp}.json`
+  );
+  
+  // Ensure output directory exists
+  if (!fs.existsSync("URL_scraper_output")) {
+    fs.mkdirSync("URL_scraper_output", { recursive: true });
+  }
+  
+  // Initialize session file
+  const sessionData = {
+    products: {},
+    summary: {
+      totalProducts: 0,
+      brandType: new URL(categoryUrl).pathname
+        .replace(/\//g, "")
+        .replace(/-/g, " "),
+      minDiscount,
+      collectedAt: new Date().toISOString(),
+      status: "in_progress",
+      lastPage: 0,
+      lastUrl: ""
+    }
+  };
+  
+  fs.writeFileSync(sessionFilename, JSON.stringify(sessionData, null, 2));
 
   try {
     while (currentUrl && !visited.has(currentUrl)) {
@@ -31,6 +67,9 @@ export async function collectProductUrls(categoryUrl, minDiscount = 40) {
       const newProducts = await extractProductData(page, domain, minDiscount);
       console.log(`  + Found ${newProducts.length} products on this page`);
       allProducts.push(...newProducts);
+
+      // Save progress after each page
+      await saveProgress(allProducts, sessionFilename, backupFilename, pageNumber, currentUrl);
 
       await handleAllPopups(page);
 
@@ -59,22 +98,102 @@ export async function collectProductUrls(categoryUrl, minDiscount = 40) {
       new Map(allProducts.map(item => [item.url, item])).values()
     );
     
+    // Final save with completed status
     const output = formatOutput({
       productsArray: uniqueProducts,
       categoryUrl,
       minDiscount,
       arraySize: 300,
     });
-    const filename = saveResults(output);
-    console.log(`✅ Saved ${uniqueProducts.length} product URLs to ${filename}`);
+    
+    // Update session file with completed status
+    output.summary.status = "completed";
+    output.summary.lastPage = pageNumber;
+    output.summary.finalUrl = currentUrl;
+    
+    // Save final results
+    fs.writeFileSync(sessionFilename, JSON.stringify(output, null, 2));
+    
+    // Also save with timestamped final name
+    const finalFilename = path.join(
+      "URL_scraper_output",
+      `jomashop_products_final_${timestamp}.json`
+    );
+    fs.writeFileSync(finalFilename, JSON.stringify(output, null, 2));
+    
+    console.log(`✅ Saved ${uniqueProducts.length} product URLs to ${sessionFilename}`);
+    console.log(`📁 Backup saved to: ${backupFilename}`);
+    console.log(`🎯 Final results saved to: ${finalFilename}`);
 
     return output;
   } catch (error) {
     console.error("❌ Error during scraping:", error);
+    
+    // Save progress with error status
+    try {
+      const errorData = {
+        products: formatOutput({
+          productsArray: allProducts,
+          categoryUrl,
+          minDiscount,
+          arraySize: 300,
+        }).products,
+        summary: {
+          totalProducts: allProducts.length,
+          brandType: new URL(categoryUrl).pathname
+            .replace(/\//g, "")
+            .replace(/-/g, " "),
+          minDiscount,
+          collectedAt: new Date().toISOString(),
+          status: "error",
+          lastPage: pageNumber,
+          lastUrl: currentUrl,
+          error: error.message,
+          errorStack: error.stack
+        }
+      };
+      
+      fs.writeFileSync(sessionFilename, JSON.stringify(errorData, null, 2));
+      console.log(`💾 Progress saved to: ${sessionFilename}`);
+      console.log(`💾 Backup saved to: ${backupFilename}`);
+    } catch (saveError) {
+      console.error("❌ Failed to save error data:", saveError);
+    }
+    
     throw error;
   } finally {
     await context.close();
     await browser.close();
+  }
+}
+
+async function saveProgress(allProducts, sessionFilename, backupFilename, pageNumber, currentUrl) {
+  try {
+    const progressData = {
+      products: formatOutput({
+        productsArray: allProducts,
+        categoryUrl: "", // Not needed for progress
+        minDiscount: 0,
+        arraySize: 300,
+      }).products,
+      summary: {
+        totalProducts: allProducts.length,
+        brandType: "in_progress",
+        minDiscount: 0,
+        collectedAt: new Date().toISOString(),
+        status: "in_progress",
+        lastPage: pageNumber,
+        lastUrl: currentUrl
+      }
+    };
+    
+    // Save to main session file
+    fs.writeFileSync(sessionFilename, JSON.stringify(progressData, null, 2));
+    
+    // Create backup
+    fs.writeFileSync(backupFilename, JSON.stringify(progressData, null, 2));
+  } catch (error) {
+    console.error("❌ Failed to save progress:", error);
   }
 }
 
@@ -188,19 +307,4 @@ function formatOutput({ productsArray, categoryUrl, minDiscount, arraySize = 10 
       collectedAt: new Date().toISOString(),
     },
   };
-}
-
-function saveResults(output) {
-  const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  if (!fs.existsSync("URL_scraper_output")) {
-    fs.mkdirSync("URL_scraper_output", { recursive: true });
-  }
-  const filename = path.join(
-    "URL_scraper_output",
-    `jomashop_products_${timestamp}.json`
-  );
-
-  fs.writeFileSync(filename, JSON.stringify(output, null, 2));
-
-  return filename;
 }
