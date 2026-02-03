@@ -3,7 +3,7 @@ import path from "path";
 import { launchBrowser } from "./helpers/browser.js";
 import { handleAllPopups } from "./helpers/popupHandler.js";
 
-export async function collectProductUrls(categoryUrl, minDiscount = 40) {
+export async function collectProductUrls(inputObject, minDiscount = 0) {
   const browser = await launchBrowser();
   const context = await browser.newContext({
     userAgent:
@@ -12,234 +12,116 @@ export async function collectProductUrls(categoryUrl, minDiscount = 40) {
 
   const page = await context.newPage();
   const domain = "https://www.jomashop.com";
-  let allProducts = [];
-  let visited = new Set();
-  let currentUrl = categoryUrl;
-  let pageNumber = 1;
-  
-  // Create filename for this session
-  const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const sessionFilename = path.join(
-    "URL_scraper_output",
-    `jomashop_products_${timestamp}.json`
-  );
-  
-  // Create backup filename
-  const backupFilename = path.join(
-    "URL_scraper_output",
-    `jomashop_products_backup_${timestamp}.json`
-  );
-  
-  // Ensure output directory exists
-  if (!fs.existsSync("URL_scraper_output")) {
-    fs.mkdirSync("URL_scraper_output", { recursive: true });
-  }
-  
-  // Initialize session file
-  const sessionData = {
-    products: {},
+
+  let results = {
+    products: [], // 👈 كل المنتجات مدموجة هنا
     summary: {
       totalProducts: 0,
-      brandType: new URL(categoryUrl).pathname
-        .replace(/\//g, "")
-        .replace(/-/g, " "),
-      minDiscount,
       collectedAt: new Date().toISOString(),
-      status: "in_progress",
-      lastPage: 0,
-      lastUrl: ""
-    }
+      minDiscount,
+    },
   };
-  
-  fs.writeFileSync(sessionFilename, JSON.stringify(sessionData, null, 2));
 
   try {
-    while (currentUrl && !visited.has(currentUrl)) {
-      visited.add(currentUrl);
+    for (const [key, value] of Object.entries(inputObject)) {
+      if (!key.startsWith("url")) continue;
 
-      console.log(`➡️ Scraping page ${pageNumber}`);
-      await page.goto(currentUrl, {
-        waitUntil: "domcontentloaded",
-        timeout: 120000,
-      });
-      await waitForProductList(page);
+      const arrayNumber = key.substring(3);
+      const categoryUrl = value;
+      const extraTags = inputObject[`extraTags${arrayNumber}`] || [];
 
-      const newProducts = await extractProductData(page, domain, minDiscount);
-      console.log(`  + Found ${newProducts.length} products on this page`);
-      allProducts.push(...newProducts);
+      console.log(`🚀 Processing URL: ${categoryUrl}`);
 
-      // Save progress after each page
-      await saveProgress(allProducts, sessionFilename, backupFilename, pageNumber, currentUrl);
+      let currentUrl = categoryUrl;
+      let pageNumber = 1;
+      let visited = new Set();
 
-      await handleAllPopups(page);
+      while (currentUrl && !visited.has(currentUrl)) {
+        visited.add(currentUrl);
+        console.log(`➡️ Scraping page ${pageNumber}`);
 
-      // Get next page link dynamically from pagination
-      const nextUrl = await page.evaluate((domain) => {
-        const nextBtn = document.querySelector(
-          "ul.pagination li.pagination-next a.page-link[href]"
+        await page.goto(currentUrl, {
+          waitUntil: "domcontentloaded",
+          timeout: 15000,
+        });
+
+        await waitForProductList(page);
+        await handleAllPopups(page);
+
+        const newProducts = await extractProductUrls(
+          page,
+          domain,
+          minDiscount,
+          extraTags,
+          categoryUrl
         );
-        if (nextBtn) {
+
+        console.log(`  + Found ${newProducts.length} products`);
+        results.products.push(...newProducts);
+
+        const nextUrl = await page.evaluate((domain) => {
+          const nextBtn = document.querySelector(
+            "ul.pagination li.pagination-next a.page-link[href]"
+          );
+          if (!nextBtn) return null;
           const href = nextBtn.getAttribute("href");
           return href.startsWith("http") ? href : domain + href;
-        }
-        return null;
-      }, domain);
+        }, domain);
 
-      if (nextUrl && !visited.has(nextUrl)) {
-        currentUrl = nextUrl;
-        pageNumber++;
-      } else {
-        break; // No more pages
+        if (nextUrl && !visited.has(nextUrl)) {
+          currentUrl = nextUrl;
+          pageNumber++;
+        } else {
+          break;
+        }
       }
     }
 
-    // Remove duplicates by URL
-    const uniqueProducts = Array.from(
-      new Map(allProducts.map(item => [item.url, item])).values()
-    );
-    
-    // Final save with completed status
-    const output = formatOutput({
-      productsArray: uniqueProducts,
-      categoryUrl,
-      minDiscount,
-      arraySize: 300,
-    });
-    
-    // Update session file with completed status
-    output.summary.status = "completed";
-    output.summary.lastPage = pageNumber;
-    output.summary.finalUrl = currentUrl;
-    
-    // Save final results
-    fs.writeFileSync(sessionFilename, JSON.stringify(output, null, 2));
-    
-    // Also save with timestamped final name
-    const finalFilename = path.join(
-      "URL_scraper_output",
-      `jomashop_products_final_${timestamp}.json`
-    );
-    fs.writeFileSync(finalFilename, JSON.stringify(output, null, 2));
-    
-    console.log(`✅ Saved ${uniqueProducts.length} product URLs to ${sessionFilename}`);
-    console.log(`📁 Backup saved to: ${backupFilename}`);
-    console.log(`🎯 Final results saved to: ${finalFilename}`);
+    // إزالة التكرار حسب URL
+    const map = new Map();
+    results.products.forEach((p) => map.set(p.url, p));
+    results.products = Array.from(map.values());
 
-    return output;
+    results.summary.totalProducts = results.products.length;
+
+    return results;
   } catch (error) {
     console.error("❌ Error during scraping:", error);
-    
-    // Save progress with error status
-    try {
-      const errorData = {
-        products: formatOutput({
-          productsArray: allProducts,
-          categoryUrl,
-          minDiscount,
-          arraySize: 300,
-        }).products,
-        summary: {
-          totalProducts: allProducts.length,
-          brandType: new URL(categoryUrl).pathname
-            .replace(/\//g, "")
-            .replace(/-/g, " "),
-          minDiscount,
-          collectedAt: new Date().toISOString(),
-          status: "error",
-          lastPage: pageNumber,
-          lastUrl: currentUrl,
-          error: error.message,
-          errorStack: error.stack
-        }
-      };
-      
-      fs.writeFileSync(sessionFilename, JSON.stringify(errorData, null, 2));
-      console.log(`💾 Progress saved to: ${sessionFilename}`);
-      console.log(`💾 Backup saved to: ${backupFilename}`);
-    } catch (saveError) {
-      console.error("❌ Failed to save error data:", saveError);
-    }
-    
     throw error;
   } finally {
+    // ✅ الحفظ الإجباري مهما صار
+    try {
+      const filename = saveResults(results);
+      console.log(`💾 Results saved to ${filename}`);
+    } catch (e) {
+      console.error("❌ Failed to save results:", e);
+    }
+
     await context.close();
     await browser.close();
   }
 }
 
-async function saveProgress(allProducts, sessionFilename, backupFilename, pageNumber, currentUrl) {
-  try {
-    const progressData = {
-      products: formatOutput({
-        productsArray: allProducts,
-        categoryUrl: "", // Not needed for progress
-        minDiscount: 0,
-        arraySize: 300,
-      }).products,
-      summary: {
-        totalProducts: allProducts.length,
-        brandType: "in_progress",
-        minDiscount: 0,
-        collectedAt: new Date().toISOString(),
-        status: "in_progress",
-        lastPage: pageNumber,
-        lastUrl: currentUrl
-      }
-    };
-    
-    // Save to main session file
-    fs.writeFileSync(sessionFilename, JSON.stringify(progressData, null, 2));
-    
-    // Create backup
-    fs.writeFileSync(backupFilename, JSON.stringify(progressData, null, 2));
-  } catch (error) {
-    console.error("❌ Failed to save progress:", error);
-  }
-}
-
 async function waitForProductList(page) {
-  try {
-    // Scroll to the bottom in 4 steps
-    for (let i = 1; i <= 20; i++) {
-      await page.evaluate((progress) => {
-        window.scrollTo({
-          top: document.body.scrollHeight * (progress / 20),
-          behavior: "smooth",
-        });
-      }, i);
-
-      await page.waitForTimeout(500);
-    }
-
-    await page.waitForFunction(
-      () => {
-        const products = document.querySelectorAll(
-          "ul.productsList li.productItem, ul.ProductListingResults__productList li.ProductListingResults__productCard"
-        );
-        const count = products.length;
-
-        const nextBtn = document.querySelector(
-          "ul.pagination li.pagination-next a.page-link[href]"
-        );
-
-        if (nextBtn) {
-          return count >= 60;
-        }
-
-        if (!window._noNextPageTime) {
-          window._noNextPageTime = Date.now();
-        }
-        return Date.now() - window._noNextPageTime > 5000;
-      },
-      { timeout: 20000 }
-    );
-  } catch (error) {
-    console.error("Timed out waiting for product list to load");
-    throw error;
+  for (let i = 1; i <= 20; i++) {
+    await page.evaluate((p) => {
+      window.scrollTo({
+        top: document.body.scrollHeight * (p / 20),
+        behavior: "smooth",
+      });
+    }, i);
+    await page.waitForTimeout(500);
   }
+
+  await page.waitForFunction(() => {
+    const products = document.querySelectorAll(
+      "ul.productsList li.productItem, ul.ProductListingResults__productList li.ProductListingResults__productCard"
+    );
+    return products.length > 0;
+  }, { timeout: 20000 });
 }
 
-async function extractProductData(page, domain, minDiscount) {
+async function extractProductUrls(page, domain, minDiscount) {
   return await page.evaluate(
     ({ domain, minDiscount }) => {
       const products = Array.from(
@@ -250,66 +132,66 @@ async function extractProductData(page, domain, minDiscount) {
 
       return products
         .map((product) => {
+          // Skip tester
+          if (
+            product.querySelector(
+              'span.tag-item.tester-label svg[viewBox="0 0 24 24"]'
+            )
+          )
+            return null;
+
+          // Discount filter
           const discountEl = product.querySelector(
             ".tag-item.discount-label, .ProductCard__discount"
           );
-          if (!discountEl && minDiscount) return null;
+          if (minDiscount && !discountEl) return null;
 
-          const discountMatch = discountEl?.textContent.trim().match(/(\d+)%/);
+          const discountMatch = discountEl?.textContent.match(/(\d+)%/);
           if (
             minDiscount &&
             (!discountMatch || parseInt(discountMatch[1]) < minDiscount)
           )
             return null;
 
+          // Out of stock detection
+          const outOfStock = Boolean(
+            product.querySelector(
+              ".out-of-stock, .sold-out, button[disabled]"
+            ) ||
+              /sold out/i.test(product.textContent)
+          );
+
           const link = product.querySelector(
             "a.productName-link, a.ProductCard__link"
           );
+
           if (!link) return null;
 
-          const url = `${domain}${link.getAttribute("href")}`;
-          
-          // Check if product is out of stock
-          const isOutOfStock = product.querySelector(
-            ".product-badges .product-badges__oos--plp span"
-          )?.textContent.trim() === "OUT OF STOCK";
-
           return {
-            url: url,
-            outOfStock: isOutOfStock
+            url: domain + link.getAttribute("href"),
+            outOfStock
           };
         })
-        .filter((product) => product !== null);
+        .filter(Boolean);
     },
     { domain, minDiscount }
   );
 }
 
-function formatOutput({ productsArray, categoryUrl, minDiscount, arraySize = 10 }) {
-  const chunked = {};
-  for (let i = 0; i < productsArray.length; i += arraySize) {
-    chunked[`array${Math.floor(i / arraySize) + 1}`] = productsArray.slice(
-      i,
-      i + arraySize
-    );
+
+function saveResults(output) {
+  const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const outputDir = "URL_scraper_output";
+
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  const brandType = new URL(categoryUrl).pathname
-    .replace(/\//g, "")
-    .replace(/-/g, " ");
+  const filename = path.join(
+    outputDir,
+    `jomashop_products_${timestamp}.json`
+  );
 
-  return {
-    products: chunked,
-    summary: {
-      totalProducts: productsArray.length,
-      brandType,
-      minDiscount,
-      collectedAt: new Date().toISOString(),
-    },
-  };
+  fs.writeFileSync(filename, JSON.stringify(output, null, 2));
+  return filename;
 }
-
-
-
-
-
