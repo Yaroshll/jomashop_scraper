@@ -132,7 +132,7 @@ async function extractProductUrls(page, domain, minDiscount) {
 
       return products
         .map((product) => {
-          // Skip tester
+          // ===== Skip tester =====
           if (
             product.querySelector(
               'span.tag-item.tester-label svg[viewBox="0 0 24 24"]'
@@ -140,25 +140,35 @@ async function extractProductUrls(page, domain, minDiscount) {
           )
             return null;
 
-          // Discount filter
-          const discountEl = product.querySelector(
-            ".tag-item.discount-label, .ProductCard__discount"
-          );
+          // ===== Discount detection (mobile-safe) =====
+          const discountEl =
+            product.querySelector(".tag-item.discount-label") ||
+            product.querySelector(".ProductCard__discount");
+
           if (minDiscount && !discountEl) return null;
 
-          const discountMatch = discountEl?.textContent.match(/(\d+)%/);
+          let discountValue = null;
+
+          if (discountEl) {
+            const text = discountEl.textContent;
+            const match = text.match(/(\d{1,3})/); // 👈 أي رقم
+            if (match) discountValue = parseInt(match[1], 10);
+          }
+
           if (
             minDiscount &&
-            (!discountMatch || parseInt(discountMatch[1]) < minDiscount)
-          )
+            discountValue !== null &&
+            discountValue < minDiscount
+          ) {
             return null;
+          }
 
-          // Out of stock detection
+          // ===== Out of stock detection =====
           const outOfStock = Boolean(
             product.querySelector(
               ".out-of-stock, .sold-out, button[disabled]"
             ) ||
-              /sold out/i.test(product.textContent)
+              /sold out|out of stock/i.test(product.textContent)
           );
 
           const link = product.querySelector(
@@ -169,7 +179,7 @@ async function extractProductUrls(page, domain, minDiscount) {
 
           return {
             url: domain + link.getAttribute("href"),
-            outOfStock
+            outOfStock,
           };
         })
         .filter(Boolean);
@@ -177,6 +187,7 @@ async function extractProductUrls(page, domain, minDiscount) {
     { domain, minDiscount }
   );
 }
+
 
 
 function saveResults(output) {
