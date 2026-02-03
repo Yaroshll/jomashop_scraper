@@ -132,38 +132,31 @@ async function extractProductUrls(page, domain, minDiscount) {
 
       return products
         .map((product) => {
-          // ===== Skip tester =====
-          if (
-            product.querySelector(
-              'span.tag-item.tester-label svg[viewBox="0 0 24 24"]'
-            )
-          )
-            return null;
+          // ===== Skip tester (نفس كودك القديم) =====
+          const testerLabel = product.querySelector(
+            'span.tag-item.tester-label svg[viewBox="0 0 24 24"]'
+          );
+          if (testerLabel) return null;
 
-          // ===== Discount detection (mobile-safe) =====
-          const discountEl =
-            product.querySelector(".tag-item.discount-label") ||
-            product.querySelector(".ProductCard__discount");
+          // ===== Discount filter (نفس كودك القديم حرفياً) =====
+          const discountEl = product.querySelector(
+            ".tag-item.discount-label, .ProductCard__discount"
+          );
+          if (!discountEl && minDiscount) return null;
 
-          if (minDiscount && !discountEl) return null;
-
-          let discountValue = null;
-
-          if (discountEl) {
-            const text = discountEl.textContent;
-            const match = text.match(/(\d{1,3})/); // 👈 أي رقم
-            if (match) discountValue = parseInt(match[1], 10);
-          }
+          const discountMatch = discountEl?.textContent
+            .trim()
+            .match(/(\d+)%/);
 
           if (
             minDiscount &&
-            discountValue !== null &&
-            discountValue < minDiscount
+            (!discountMatch ||
+              parseInt(discountMatch[1], 10) < minDiscount)
           ) {
             return null;
           }
 
-          // ===== Out of stock detection =====
+          // ===== Out of stock (إضافة فقط) =====
           const outOfStock = Boolean(
             product.querySelector(
               ".out-of-stock, .sold-out, button[disabled]"
@@ -171,6 +164,7 @@ async function extractProductUrls(page, domain, minDiscount) {
               /sold out|out of stock/i.test(product.textContent)
           );
 
+          // ===== Link (نفس كودك القديم) =====
           const link = product.querySelector(
             "a.productName-link, a.ProductCard__link"
           );
@@ -178,11 +172,11 @@ async function extractProductUrls(page, domain, minDiscount) {
           if (!link) return null;
 
           return {
-            url: domain + link.getAttribute("href"),
+            url: `${domain}${link.getAttribute("href")}`,
             outOfStock,
           };
         })
-        .filter(Boolean);
+        .filter((item) => item !== null);
     },
     { domain, minDiscount }
   );
