@@ -12,116 +12,203 @@ export async function collectProductUrls(inputObject, minDiscount = 0) {
 
   const page = await context.newPage();
   const domain = "https://www.jomashop.com";
-
   let results = {
-    products: [], // 👈 كل المنتجات مدموجة هنا
+    arrays: {},  // This will store all arrays with their details
     summary: {
       totalProducts: 0,
+      totalArrays: 0,
       collectedAt: new Date().toISOString(),
-      minDiscount,
-    },
+      minDiscount: minDiscount,
+      status: "in_progress"  // Add status tracking
+    }
   };
 
+  // Create session files for backup
+  const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const sessionFilename = path.join("URL_scraper_output", `jomashop_urls_${timestamp}.json`);
+  const backupFilename = path.join("URL_scraper_output", `jomashop_urls_backup_${timestamp}.json`);
+  
+  // Ensure output directory exists
+  if (!fs.existsSync("URL_scraper_output")) {
+    fs.mkdirSync("URL_scraper_output", { recursive: true });
+  }
+  
+  // Initialize session file
+  fs.writeFileSync(sessionFilename, JSON.stringify(results, null, 2));
+
   try {
+    // Process each URL in the input object
     for (const [key, value] of Object.entries(inputObject)) {
-      if (!key.startsWith("url")) continue;
+      if (key.startsWith("url")) {
+        const arrayNumber = key.substring(3);
+        const categoryUrl = value;
+        const extraTags = inputObject[`extraTags${arrayNumber}`] || [];
+        
+        console.log(`🚀 Processing URL: ${categoryUrl}`);
+        let currentUrl = categoryUrl;
+        let pageNumber = 1;
+        let visited = new Set();
+        let urlArray = [];
+        
+        while (currentUrl && !visited.has(currentUrl)) {
+          visited.add(currentUrl);
+          console.log(`➡️ Scraping page ${pageNumber}`);
+          
+          await page.goto(currentUrl, {
+            waitUntil: "domcontentloaded",
+            timeout: 12000,
+          });
+          await waitForProductList(page);
 
-      const arrayNumber = key.substring(3);
-      const categoryUrl = value;
-      const extraTags = inputObject[`extraTags${arrayNumber}`] || [];
+          const newProducts = await extractProductData(page, domain, minDiscount);
+          console.log(`  + Found ${newProducts.length} products on this page`);
+          urlArray.push(...newProducts);
 
-      console.log(`🚀 Processing URL: ${categoryUrl}`);
+          // Save progress after each page
+          await saveProgress(results, sessionFilename, backupFilename);
 
-      let currentUrl = categoryUrl;
-      let pageNumber = 1;
-      let visited = new Set();
+          await handleAllPopups(page);
 
-      while (currentUrl && !visited.has(currentUrl)) {
-        visited.add(currentUrl);
-        console.log(`➡️ Scraping page ${pageNumber}`);
+          // Get next page link
+          const nextUrl = await page.evaluate((domain) => {
+            const nextBtn = document.querySelector(
+              "ul.pagination li.pagination-next a.page-link[href]"
+            );
+            if (nextBtn) {
+              const href = nextBtn.getAttribute("href");
+              return href.startsWith("http") ? href : domain + href;
+            }
+            return null;
+          }, domain);
 
-        await page.goto(currentUrl, {
-          waitUntil: "domcontentloaded",
-          timeout: 15000,
-        });
-
-        await waitForProductList(page);
-        await handleAllPopups(page);
-
-        const newProducts = await extractProductUrls(
-          page,
-          domain,
-          minDiscount,
-          extraTags,
-          categoryUrl
-        );
-
-        console.log(`  + Found ${newProducts.length} products`);
-        results.products.push(...newProducts);
-
-        const nextUrl = await page.evaluate((domain) => {
-          const nextBtn = document.querySelector(
-            "ul.pagination li.pagination-next a.page-link[href]"
-          );
-          if (!nextBtn) return null;
-          const href = nextBtn.getAttribute("href");
-          return href.startsWith("http") ? href : domain + href;
-        }, domain);
-
-        if (nextUrl && !visited.has(nextUrl)) {
-          currentUrl = nextUrl;
-          pageNumber++;
-        } else {
-          break;
+          if (nextUrl && !visited.has(nextUrl)) {
+            currentUrl = nextUrl;
+            pageNumber++;
+          } else {
+            break;
+          }
         }
+
+        // Remove duplicates
+        const uniqueProducts = Array.from(new Map(urlArray.map(item => [item.url, item])).values());
+        
+        // Add to results with detailed info
+        const arrayKey = `array${arrayNumber}`;
+        results.arrays[arrayKey] = {
+          products: uniqueProducts,  // Changed from urls to products
+          extraTags: extraTags,
+          summary: {
+            productCount: uniqueProducts.length,
+            sourceUrl: categoryUrl,
+            tags: extraTags,
+            scrapedAt: new Date().toISOString()
+          }
+        };
+        
+        // Update global summary
+        results.summary.totalProducts += uniqueProducts.length;
+        results.summary.totalArrays++;
+        
+        // Save progress after each array
+        await saveProgress(results, sessionFilename, backupFilename);
+        
+        console.log(`✅ Collected ${uniqueProducts.length} products for ${arrayKey}`);
       }
     }
 
-    // إزالة التكرار حسب URL
-    const map = new Map();
-    results.products.forEach((p) => map.set(p.url, p));
-    results.products = Array.from(map.values());
-
-    results.summary.totalProducts = results.products.length;
+    // Save final results
+    results.summary.status = "completed";
+    fs.writeFileSync(sessionFilename, JSON.stringify(results, null, 2));
+    
+    // Also save with timestamped final name
+    const finalFilename = path.join("URL_scraper_output", `jomashop_urls_final_${timestamp}.json`);
+    fs.writeFileSync(finalFilename, JSON.stringify(results, null, 2));
+    
+    console.log(`💾 Session saved to: ${sessionFilename}`);
+    console.log(`💾 Backup saved to: ${backupFilename}`);
+    console.log(`🎯 Final results saved to: ${finalFilename}`);
 
     return results;
   } catch (error) {
     console.error("❌ Error during scraping:", error);
+    
+    // Save error state with current progress
+    results.summary.status = "error";
+    results.summary.error = error.message;
+    
+    try {
+      fs.writeFileSync(sessionFilename, JSON.stringify(results, null, 2));
+      fs.writeFileSync(backupFilename, JSON.stringify(results, null, 2));
+      console.log(`💾 Progress saved to: ${sessionFilename}`);
+      console.log(`💾 Backup saved to: ${backupFilename}`);
+    } catch (saveError) {
+      console.error("❌ Failed to save error data:", saveError);
+    }
+    
     throw error;
   } finally {
-    // ✅ الحفظ الإجباري مهما صار
-    try {
-      const filename = saveResults(results);
-      console.log(`💾 Results saved to ${filename}`);
-    } catch (e) {
-      console.error("❌ Failed to save results:", e);
-    }
-
     await context.close();
     await browser.close();
   }
 }
 
-async function waitForProductList(page) {
-  for (let i = 1; i <= 20; i++) {
-    await page.evaluate((p) => {
-      window.scrollTo({
-        top: document.body.scrollHeight * (p / 20),
-        behavior: "smooth",
-      });
-    }, i);
-    await page.waitForTimeout(500);
+async function saveProgress(results, sessionFilename, backupFilename) {
+  try {
+    // Create a copy of results for saving
+    const progressData = JSON.parse(JSON.stringify(results));
+    progressData.summary.status = "in_progress";
+    progressData.summary.lastSavedAt = new Date().toISOString();
+    
+    fs.writeFileSync(sessionFilename, JSON.stringify(progressData, null, 2));
+    fs.writeFileSync(backupFilename, JSON.stringify(progressData, null, 2));
+  } catch (error) {
+    console.error("❌ Failed to save progress:", error);
   }
-
-  await page.waitForFunction(() => {
-    const products = document.querySelectorAll(
-      "ul.productsList li.productItem, ul.ProductListingResults__productList li.ProductListingResults__productCard"
-    );
-    return products.length > 0;
-  }, { timeout: 20000 });
 }
 
-async function extractProductUrls(page, domain, minDiscount) {
+async function waitForProductList(page) {
+  try {
+    // Scroll to the bottom in 4 steps
+    for (let i = 1; i <= 20; i++) {
+      await page.evaluate((progress) => {
+        window.scrollTo({
+          top: document.body.scrollHeight * (progress / 20),
+          behavior: "smooth",
+        });
+      }, i);
+
+      await page.waitForTimeout(500);
+    }
+
+    await page.waitForFunction(
+      () => {
+        const products = document.querySelectorAll(
+          "ul.productsList li.productItem, ul.ProductListingResults__productList li.ProductListingResults__productCard"
+        );
+        const count = products.length;
+
+        const nextBtn = document.querySelector(
+          "ul.pagination li.pagination-next a.page-link[href]"
+        );
+
+        if (nextBtn) {
+          return count >= 60;
+        }
+
+        if (!window._noNextPageTime) {
+          window._noNextPageTime = Date.now();
+        }
+        return Date.now() - window._noNextPageTime > 5000;
+      },
+      { timeout: 20000 }
+    );
+  } catch (error) {
+    console.error("Timed out waiting for product list to load");
+    throw error;
+  }
+}
+
+async function extractProductData(page, domain, minDiscount) {
   return await page.evaluate(
     ({ domain, minDiscount }) => {
       const products = Array.from(
@@ -132,71 +219,69 @@ async function extractProductUrls(page, domain, minDiscount) {
 
       return products
         .map((product) => {
-          // ===== Skip tester (نفس كودك القديم) =====
+          // Check for tester label first
           const testerLabel = product.querySelector(
             'span.tag-item.tester-label svg[viewBox="0 0 24 24"]'
           );
-          if (testerLabel) return null;
+          if (testerLabel) return null; // Skip tester products
 
-          // ===== Discount filter (نفس كودك القديم حرفياً) =====
           const discountEl = product.querySelector(
             ".tag-item.discount-label, .ProductCard__discount"
           );
           if (!discountEl && minDiscount) return null;
 
-          const discountMatch = discountEl?.textContent
-            .trim()
-            .match(/(\d+)%/);
-
+          const discountMatch = discountEl?.textContent.trim().match(/(\d+)%/);
           if (
             minDiscount &&
-            (!discountMatch ||
-              parseInt(discountMatch[1], 10) < minDiscount)
-          ) {
+            (!discountMatch || parseInt(discountMatch[1]) < minDiscount)
+          )
             return null;
-          }
 
-          // ===== Out of stock (إضافة فقط) =====
-          const outOfStock = Boolean(
-            product.querySelector(
-              ".out-of-stock, .sold-out, button[disabled]"
-            ) ||
-              /sold out|out of stock/i.test(product.textContent)
-          );
-
-          // ===== Link (نفس كودك القديم) =====
           const link = product.querySelector(
             "a.productName-link, a.ProductCard__link"
           );
-
           if (!link) return null;
 
+          const url = `${domain}${link.getAttribute("href")}`;
+          
+          // FIXED: Check if product is out of stock
+          const outOfStockBadge = product.querySelector(
+            ".product-badges .product-badges__oos--plp span"
+          );
+          
+          // Only set to true if badge exists and contains "OUT OF STOCK"
+          const isOutOfStock = outOfStockBadge && 
+                              outOfStockBadge.textContent.trim() === "OUT OF STOCK";
+
           return {
-            url: `${domain}${link.getAttribute("href")}`,
-            outOfStock,
+            url: url,
+            outOfStock: isOutOfStock
           };
         })
-        .filter((item) => item !== null);
+        .filter((product) => product !== null);
     },
     { domain, minDiscount }
   );
 }
 
-
-
 function saveResults(output) {
-  const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-  const outputDir = "URL_scraper_output";
-
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
+  try {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const outputDir = "URL_scraper_output";
+    
+    // Create directory if it doesn't exist
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+    
+    const filename = path.join(outputDir, `jomashop_urls_${timestamp}.json`);
+    const dataToSave = JSON.stringify(output, null, 2);
+    
+    fs.writeFileSync(filename, dataToSave);
+    console.log(`✅ Successfully saved results to ${filename}`);
+    return filename;
+  } catch (error) {
+    console.error("❌ Error saving results:", error);
+    throw error;
   }
-
-  const filename = path.join(
-    outputDir,
-    `jomashop_products_${timestamp}.json`
-  );
-
-  fs.writeFileSync(filename, JSON.stringify(output, null, 2));
-  return filename;
 }
