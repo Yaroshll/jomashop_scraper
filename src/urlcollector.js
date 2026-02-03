@@ -308,3 +308,8 @@ function formatOutput({ productsArray, categoryUrl, minDiscount, arraySize = 10 
     },
   };
 }
+
+
+
+
+
